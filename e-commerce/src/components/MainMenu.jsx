@@ -4,7 +4,7 @@ import {menus, categories} from "../data/menus"
 
 
 
-export default function MainMenu(props){
+export default function MainMenu(){
 
     const subMenus = menus.map(subMenu => {
         return(

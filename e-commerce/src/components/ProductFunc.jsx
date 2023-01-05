@@ -1,5 +1,7 @@
+import { Carousel, CarouselItem } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-
+import { heroSection } from '../data/Seed';
+import React, { useState } from 'react';
 
 function ProductFunc(props) {
   return (
@@ -16,7 +18,7 @@ function ProductFunc(props) {
         </div>
         <div className="second-header p-4 text-white d-flex justify-content-between">
           <img className="px-5 logo" src={props.logoUrl} />
-          <div className="flex-grow-1 ps-3">
+          <div className="flex-grow-1 ps-3 col-md">
             <input type="seacrh" placeholder="Search any things" className="p-3 w-50 rounded-4"></input>
             <button class="button text-white rounded-4">Search</button>
           </div>
@@ -30,24 +32,92 @@ function ProductFunc(props) {
   );
 }
 
-function Popularproducts(props){
-  return(
-    <div className="popular-products">
-    <Card style={{ width: '18rem'},{margin: "10px"}}>
-      <Card.Img src={props.picUrl} />
-      <Card.Body>
-        <Card.Title>
-          {props.title}
-        </Card.Title>
-        <Card.Text>
-          {props.price}
-        </Card.Text>
-      </Card.Body>
-    </Card>
 
+function HeroFunc(props) {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+  return (
+    // <Carousel className="w-100 d-block">
+    //   <CarouselItem className="d-flex p-5">
+    //     <div className="w-50 text-container">
+    //       <h2 className="fw-bolder text-font">{props.title}</h2>
+    //       <div>
+    //         <button className="btn1">Shop Now</button>
+    //         <button className="btn2">View More</button>
+    //       </div>
+    //     </div>
+    //     <div className="w-50 img-container">
+    //       <img src={props.picUrl} className=" main-img"></img>
+    //     </div>
+    //   </CarouselItem>
+    // </Carousel>
+    <div>
+      <Carousel className="w-100 d-block" activeIndex={index} onSelect={handleSelect}>
+        {heroSection.map((hero) => {
+          return (
+            <CarouselItem className="d-flex p-5">
+              <div className="w-50 text-container">
+                <h2 className="fw-bolder text-font">{hero.title}</h2>
+                <div>
+                  <button className="btn1">Shop Now</button>
+                  <button className="btn2">View More</button>
+                </div>
+              </div>
+              <div className="w-50 img-container">
+                <img src={hero.picUrl} className=" main-img"></img>
+              </div>
+            </CarouselItem>
+          )
+        })}
+
+      </Carousel>
     </div>
-    
   )
 }
 
-export { ProductFunc, Popularproducts};
+function SliderProduct(props) {
+  return (
+    <div className="slider-container">
+      <img className="sliderPic" src={props.picUrl}></img>
+      <div className="mx-3 me-3">
+        <h2>
+          {props.title}
+        </h2>
+        <p>{props.text}</p>
+      </div>
+    </div>
+  )
+}
+
+function Popularproducts(props) {
+  return (
+    <div className="popular-products">
+      <Card className="card-style">
+        <Card.Img className="card-image" src={props.picUrl} />
+        <Card.Body>
+            <h3>{props.title}</h3>
+            <div className="d-flex">
+              <div>
+              <p>{props.price}</p>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+              </div>
+              <p className="p-3"><i class="bi bi-cart3"></i></p>
+            </div>
+          {/* <Card.Title>
+            {props.title}
+          </Card.Title>
+          <Card.Text>
+            {props.price}
+          </Card.Text> */}
+        </Card.Body>
+      </Card>
+    </div>
+  )
+}
+
+
+
+export { ProductFunc, HeroFunc, SliderProduct, Popularproducts };

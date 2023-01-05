@@ -8,4 +8,14 @@
 .button{
   margin-left: -50px;
   padding: 16px 40px;
+  background: #EDA415;
+}
+
+.cate{
+  background: #EDA415;
+}
+
+.popularPRO{
+  display: flex;
+  flex-wrap: wrap;
 }

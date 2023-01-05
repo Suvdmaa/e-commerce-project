@@ -13,20 +13,68 @@ const header = [
     },
 ];
 
+// const heroSection = [
+//     {
+//         title: "Carousel-1",
+//         children: [
+//             {
+//                 title: "Canon camera",
+//                 votes: generateVoteCount(),
+//                 picUrl: "images/8.png"
+//             },
+//         ]
+//     },
+//     {
+//         title: "Carousel-2",
+//         children: [
+//             {
+//                 title: "Laptop",
+//                 votes: generateVoteCount(),
+//                 picUrl: "images/5.png"
+//             }
+
+//         ]
+//     }
+// ]
+
 const heroSection = [
-        {
-            title: "Canon camera",
-            votes: generateVoteCount(),
-            picUrl: "images/8.png"
-        },
-        {
-            title: "Laptop",
-            votes:  generateVoteCount(),
-            picUrl: "images/5.png"
-        }
+    {
+        title: "Canon camera",
+        votes: generateVoteCount(),
+        picUrl: "images/8.png"
+    },
+    // {
+    //     title: "Laptop",
+    //     votes: generateVoteCount(),
+    //     picUrl: "images/5.png"
+    // }
 ]
 
-const PopularProducts =[
+
+const sliderProduct = [
+    {
+        title: "Speaker",
+        position: 1,
+        text: "6 items",
+        picUrl: "images/2.png",
+    },
+    {
+        title: "Speaker",
+        position: 1,
+        text: "6 items",
+        picUrl: "images/5.png",
+    },
+    {
+        title: "Speaker",
+        position: 1,
+        text: "6 items",
+        picUrl: "images/8.png",
+    },
+] 
+
+
+
+const PopularProducts = [
     {
         title: "Camera",
         position: 1,
@@ -77,5 +125,19 @@ const PopularProducts =[
     },
 ]
 
-export {header,PopularProducts}
+const Section = [
+    {
+        picUrl: "images/pexels.png",
+        text: "Sale up to 50% off",
+        description: '12 inch hd display'
+    }
+]
+
+const ThreeProduct =[
+    {
+        title: "JBL bar 2.1 deep bass",
+        price: "$11,70",
+    },
+]
+export { header, heroSection,sliderProduct, PopularProducts, Section}
 

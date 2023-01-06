@@ -2,7 +2,7 @@ const carouselData = [
     {
         title: "Canon camera",
         style: 'sliderimg',
-        name: "images/camera12.png",
+        name: "images/d-3.jpeg",
         price: "$155"
     },
     {
@@ -14,7 +14,7 @@ const carouselData = [
 
     {
         title: "Game console",
-        name: 'images/ps5-2.jpeg',
+        name: 'images/pp1.jpeg',
         style: 'sliderimg',
         price: "$999"
     },

@@ -20,14 +20,14 @@ const SecondSliderProduct = [
         picUrl: "images/red.jpg",
     },
     {
-        title: "Camera",
+        title: "Beats Solo3 Wireless Headphones",
         text: "6 items",
-        picUrl: "images/8.png",
+        picUrl: "images/ear2.jpg",
     },
     {
-        title: "Camera",
+        title: "BENGOO Stereo Pro Gaming Headset",
         text: "6 items",
-        picUrl: "images/8.png",
+        picUrl: "images/h2.jpg",
     },
 
 

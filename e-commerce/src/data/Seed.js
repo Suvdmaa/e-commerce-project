@@ -13,15 +13,13 @@ const header = [
     },
 ];
 
-
-
-
 const PopularProducts = [
     {
         title: "Camera",
         position: 1,
         price: "$11,70",
-        picUrl: "images/camera.png"
+        picUrl: "images/camera.png",
+        rating: "2,3",
     },
     {
         title: "Wireless headphones",
@@ -75,11 +73,6 @@ const sectionProduct = [
     }
 ]
 
-const ThreeProduct =[
-    {
-        title: "JBL bar 2.1 deep bass",
-        price: "$11,70",
-    },
-]
+
 export { header, PopularProducts, sectionProduct}
 

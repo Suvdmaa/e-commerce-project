@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import ReactStars from "react-rating-stars-component";
 
 
 
@@ -22,8 +23,8 @@ function ProductFunc(props) {
             <button class="button text-white rounded-4">Search</button>
           </div>
           <p className="p-3"><i class="bi bi-person px-2"></i>Sign in</p>
-          <p className="p-3"><i class="bi bi-heart px-2" ></i><span className="bg-warning p-1 px-2 rounded-circle">0</span></p>
-          <p className="p-3"><i class="bi bi-cart3 px-2"></i><span className="bg-warning p-1 px-2 rounded-circle">0</span></p>
+          <p className="p-3"><i class="bi bi-heart px-2" ></i><span className="color-circle p-1 px-2 rounded-circle">0</span></p>
+          <p className="p-3"><i class="bi bi-cart3 px-2"></i><span className="color-circle p-1 px-2 rounded-circle">0</span></p>
 
         </div>
       </header>
@@ -33,25 +34,27 @@ function ProductFunc(props) {
 
 
 function Popularproducts(props) {
+  const ratingChanged = (newRating) => {
+    console.log(newRating)
+  };
   return (
     <div className="popular-products">
       <Card className="card-style">
         <Card.Img className="card-image" src={props.picUrl} />
-        <Card.Body>
-            <h5>{props.title}</h5>
-            <div className="d-flex">
-              <div>
+        <Card.Body className="cart-container">
+          <h5>{props.title}</h5>
+          <div className="d-flex">
+            <div>
               <p>{props.price}</p>
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
-              </div>
-              <p className="p-3"><i class="bi bi-cart3"></i></p>
+              <ReactStars
+                count={5}
+                onChange={ratingChanged}
+                size={24}
+                activeColor="#ffd700"
+              />
+             <p className="cart"><i class="bi bi-cart3"></i></p>
             </div>
-          {/* <Card.Title>
-            {props.title}
-          </Card.Title>
-          <Card.Text>
-            {props.price}
-          </Card.Text> */}
+          </div>
         </Card.Body>
       </Card>
     </div>

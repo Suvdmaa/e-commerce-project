@@ -1,12 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { header, heroSection,  PopularProducts, Section, sliderProduct } from './data/Seed';
-import { ProductFunc, Popularproducts, HeroFunc, SliderProduct, SectionFunc } from './components/ProductFunc';
+import { header, PopularProducts, Section, sectionProduct, sliderProduct } from './data/Seed';
+import { ProductFunc, Popularproducts } from './components/ProductFunc';
 import MainMenu from './components/MainMenu';
-// import SliderFunc from './components/Slider';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import AliceCarousel from "react-alice-carousel"
+import carouselData from './data/carousel';
+import SecondSliderProduct from './data/secondcarousel';
 
 
 function App() {
@@ -20,36 +20,76 @@ function App() {
       logoUrl={header.logoUrl} />
   })
 
-  const popularProducts = PopularProducts.map((products) =>{
+  const popularProducts = PopularProducts.map((products) => {
     return <Popularproducts
-    title={products.title}
-    position={products.position}
-    price={products.price}
-    picUrl={products.picUrl}
+      title={products.title}
+      position={products.position}
+      price={products.price}
+      picUrl={products.picUrl}
     />
   })
 
-  const HeroSection = heroSection.map((hero) =>{
-    return <HeroFunc
-    title={hero.title}
-    votes={hero.votes}
-    picUrl={hero.picUrl}
-    children={hero.children}
-    />
+
+  const images = carouselData.map((data) => {
+    return (
+      <div className='carousel-container'>
+        <div className="text-container">
+          <h2 className="fw-bolder text-font">{data.title}</h2>
+          <div>
+            <button className="btn1">Shop Now</button>
+            <button className="btn2">View More</button>
+          </div>
+        </div>
+        <div className="img-container">
+          <img src={data.name} className={data.style} class="carousel-img"></img>
+          <div className="circle-price">only {data.price}</div>
+        </div>
+      </div>
+    )
+  })
+
+
+
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3 },
+  };
+
+  const items = SecondSliderProduct.map((product) => {
+    return (
+      <div className="slider-container">
+        <img className="sliderPic" src={product.picUrl}></img>
+        <div className="mx-3 me-3">
+          <h4>
+            {product.title}
+          </h4>
+          <p>{product.text}</p>
+        </div>
+      </div>
+    )
+  })
+
+  const SectionProduct = sectionProduct.map((product) =>{
+    return (
+      <div className="card">
+        <img src={product.picUrl} className="card-img" />
+        <div className="card-img-overlay innertext">
+          <button className="card-btn">New laptop</button>
+          <h5 className="card-title">{product.text}</h5>
+          <p className="card-text">{product.description}</p>
+          <button className="card-btn">Shop now</button>
+        </div>
+      </div>
+    )
   })
   
-  // const SliderP = sliderProduct.map((product) =>{
-  //   return <SliderProduct 
-  //   title={product.title}
-  //   position={product.position}
-  //   picUrl={product.picUrl}
-  //   text={product.text}/>
-
-  // })
 
 
- 
   
+
+
+
 
   return (
     <div className="App container">
@@ -62,28 +102,43 @@ function App() {
         </div>
       </div>
       <div className="Slider">
-        {HeroSection}
-        {/* {SimpleSlider} */}
-        {/* {SliderFunc} */}
-        
+        <AliceCarousel autoPlayInterval="3000">
+          {images}
+        </AliceCarousel>
       </div>
-      <div className='d-flex justify-content-center'>
-        {/* {SliderP} */}
-        {HeroFunc}
+      <div className='slidercontainer'>
+        <AliceCarousel
+          duration={400}
+          autoPlay={true}
+          startIndex={1}
+          fadeOutAnimation={true}
+          mouseDragEnabled={true}
+          playButtonEnabled={true}
+          responsive={responsive}
+          autoPlayInterval={2000}
+          autoPlayDirection="rtl"
+          autoPlayActionDisabled={true}
+        >
+         {items}
+        </AliceCarousel>
+
       </div>
+
+
       <div>
         <div className="secondtitle-container">
-           <h2 className="flex-grow-1">Popular Products</h2>
-           <button className="btn-click">Cameras</button>
-           <button className="btn-click">Laptops</button>
-           <button className="btn-click">Tablets</button>
-           <button className="btn-click">Mouse</button>
+          <h2 className="flex-grow-1">Popular Products</h2>
+          <button className="btn-click">Cameras</button>
+          <button className="btn-click">Laptops</button>
+          <button className="btn-click">Tablets</button>
+          <button className="btn-click">Mouse</button>
         </div>
 
         <div className="popularPRO">
-           {popularProducts}
+          {popularProducts}
         </div>
         <div>
+          {SectionProduct}
         
         </div>
       </div>

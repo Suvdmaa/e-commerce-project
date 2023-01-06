@@ -13,64 +13,6 @@ const header = [
     },
 ];
 
-// const heroSection = [
-//     {
-//         title: "Carousel-1",
-//         children: [
-//             {
-//                 title: "Canon camera",
-//                 votes: generateVoteCount(),
-//                 picUrl: "images/8.png"
-//             },
-//         ]
-//     },
-//     {
-//         title: "Carousel-2",
-//         children: [
-//             {
-//                 title: "Laptop",
-//                 votes: generateVoteCount(),
-//                 picUrl: "images/5.png"
-//             }
-
-//         ]
-//     }
-// ]
-
-const heroSection = [
-    {
-        title: "Canon camera",
-        votes: generateVoteCount(),
-        picUrl: "images/8.png"
-    },
-    // {
-    //     title: "Laptop",
-    //     votes: generateVoteCount(),
-    //     picUrl: "images/5.png"
-    // }
-]
-
-
-const sliderProduct = [
-    {
-        title: "Speaker",
-        position: 1,
-        text: "6 items",
-        picUrl: "images/2.png",
-    },
-    {
-        title: "Speaker",
-        position: 1,
-        text: "6 items",
-        picUrl: "images/5.png",
-    },
-    {
-        title: "Speaker",
-        position: 1,
-        text: "6 items",
-        picUrl: "images/8.png",
-    },
-] 
 
 
 
@@ -125,7 +67,7 @@ const PopularProducts = [
     },
 ]
 
-const Section = [
+const sectionProduct = [
     {
         picUrl: "images/pexels.png",
         text: "Sale up to 50% off",
@@ -139,5 +81,5 @@ const ThreeProduct =[
         price: "$11,70",
     },
 ]
-export { header, heroSection,sliderProduct, PopularProducts, Section}
+export { header, PopularProducts, sectionProduct}
 

@@ -22,7 +22,7 @@
 }
 
 .card-style{
-  width: 18rem;
+  width: 19rem;
   padding: 30px;
   margin: 10px;
 
@@ -34,8 +34,89 @@
 }
 
 .text-container{
-  padding: 20px 0 0 100px;
+  width: 35%;
+  padding: 80px;
 }
+
+.carousel-container{
+  width: 100%;
+  height: 430px;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-img{
+  width: 500px;
+  display: flex;
+  padding: 50px 0 0 50px;
+}
+
+.circle-price{
+  width: 100px; 
+  height: 100px;
+  background-color: #EDA415;
+  border-radius: 50%;
+  position: absolute;
+  top: 70%;
+  right: 10%;
+  padding: 20px;
+  font-size: 23px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.Slider .alice-carousel__next-btn-wrapper, 
+.Slider .alice-carousel__prev-btn-wrapper
+{
+  display: none;
+}
+
+/* .alice-carousel__dots-item:not(.__custom) {
+  width: 30px;  
+  height: 30px;
+} */
+
+.slidercontainer{
+  position: relative;
+}
+
+.slidercontainer .alice-carousel__next-btn-item{
+  font-size: 25px;
+  background: #EAEAEA;
+  width: 45px;
+  text-align: center;
+  border-radius: 50px;
+  position: absolute;
+  top: 25%;
+  right: 0%;
+}
+.slidercontainer .alice-carousel__prev-btn-item{
+  font-size: 25px; 
+  background: #EAEAEA;
+  width: 45px;
+  text-align: center;
+  border-radius: 50px;
+  position: absolute;
+  top: 25%;
+  left: 0%;
+}
+
+.Slider .alice-carousel__dots .alice-carousel__dots-item{
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ADADAD;
+  background-color: white;
+}
+
+.Slider .alice-carousel__dots .alice-carousel__dots-item:not(.__custom).__active{
+  background: #EDA415;
+}
+
+.slidercontainer .alice-carousel__dots .alice-carousel__dots-item{
+  display: none;
+}
+
 
 .text-font{
   color: #1B5A7D;
@@ -46,6 +127,7 @@
 
 .img-container{
   padding-left: 150px;
+  position: relative;
 }
 
 .btn1{
@@ -67,13 +149,15 @@
 }
 
 .slider-container{
-  width: 300px;
+  width: 400px;
+  height: 180px;
   padding: 30px;
-  margin: 20px;
+  margin: 10px;
   border: 1px solid var(--bs-border-color-translucent);
   border-radius: 0.375rem;
   display: flex;
   margin-bottom: 50px;
+  justify-content: center;
 
 }
 
@@ -93,3 +177,29 @@
   border: 1px solid var(--bs-border-color-translucent);
 }
 
+
+.innertext{
+  margin: 5% 0 0 50%;
+  text-align: center;
+}
+
+.card-btn{
+  background: #EDA415;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 20px;
+}
+
+.card-title{
+  color: #2E8FC5;
+  font-size: 41px;
+  font-weight: 700;
+  line-height: 61.5px;
+  margin-top: 30px;
+}
+
+.card-text{
+  color: white;
+  font-size: 18px;
+  margin-bottom: 30px;
+}

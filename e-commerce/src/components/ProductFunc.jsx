@@ -1,7 +1,6 @@
-import { Carousel, CarouselItem } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import { heroSection } from '../data/Seed';
-import React, { useState } from 'react';
+
+
 
 function ProductFunc(props) {
   return (
@@ -33,72 +32,13 @@ function ProductFunc(props) {
 }
 
 
-function HeroFunc(props) {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
-  return (
-    // <Carousel className="w-100 d-block">
-    //   <CarouselItem className="d-flex p-5">
-    //     <div className="w-50 text-container">
-    //       <h2 className="fw-bolder text-font">{props.title}</h2>
-    //       <div>
-    //         <button className="btn1">Shop Now</button>
-    //         <button className="btn2">View More</button>
-    //       </div>
-    //     </div>
-    //     <div className="w-50 img-container">
-    //       <img src={props.picUrl} className=" main-img"></img>
-    //     </div>
-    //   </CarouselItem>
-    // </Carousel>
-    <div>
-      <Carousel className="w-100 d-block" activeIndex={index} onSelect={handleSelect}>
-        {heroSection.map((hero) => {
-          return (
-            <CarouselItem className="d-flex p-5">
-              <div className="w-50 text-container">
-                <h2 className="fw-bolder text-font">{hero.title}</h2>
-                <div>
-                  <button className="btn1">Shop Now</button>
-                  <button className="btn2">View More</button>
-                </div>
-              </div>
-              <div className="w-50 img-container">
-                <img src={hero.picUrl} className=" main-img"></img>
-              </div>
-            </CarouselItem>
-          )
-        })}
-
-      </Carousel>
-    </div>
-  )
-}
-
-function SliderProduct(props) {
-  return (
-    <div className="slider-container">
-      <img className="sliderPic" src={props.picUrl}></img>
-      <div className="mx-3 me-3">
-        <h2>
-          {props.title}
-        </h2>
-        <p>{props.text}</p>
-      </div>
-    </div>
-  )
-}
-
 function Popularproducts(props) {
   return (
     <div className="popular-products">
       <Card className="card-style">
         <Card.Img className="card-image" src={props.picUrl} />
         <Card.Body>
-            <h3>{props.title}</h3>
+            <h5>{props.title}</h5>
             <div className="d-flex">
               <div>
               <p>{props.price}</p>
@@ -120,4 +60,4 @@ function Popularproducts(props) {
 
 
 
-export { ProductFunc, HeroFunc, SliderProduct, Popularproducts };
+export { ProductFunc, Popularproducts };

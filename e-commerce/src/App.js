@@ -1,15 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { header, PopularProducts, Section, sectionProduct, sliderProduct } from './data/Seed';
+import { header, PopularProducts, sectionProduct } from './data/Seed';
 import ProductFunc from './components/ProductFunc';
 import MainMenu from './components/MainMenu';
 import AliceCarousel from "react-alice-carousel"
 import carouselData from './data/carousel';
 import SecondSliderProduct from './data/secondcarousel';
-import { product , twoProduct } from './data/thirdsection';
-import {Twoproduct} from "./components/thirdsection"
-import { Card } from 'react-bootstrap';
+import { product, twoProduct } from './data/thirdsection';
+import { Twoproduct } from "./components/thirdsection"
+import { Card, Carousel } from 'react-bootstrap';
 import ReactStars from "react-rating-stars-component";
 import { fourthsection, logos } from './data/fourthsection';
 import Popularproducts from './components/PopularProducts';
@@ -17,6 +17,8 @@ import Peopleprofile from './data/peopleprofile';
 import PeopleProfile from './components/PeopleProfile';
 import NewsSec from './components/NewsSection';
 import newsSlider from './data/newsslider';
+
+
 
 function App() {
   // Header Section
@@ -50,8 +52,8 @@ function App() {
     )
   })
 
-
-// Second Slider Section
+  
+  // Second Slider Section
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
@@ -72,18 +74,18 @@ function App() {
     )
   })
 
-   // Popular Product Section
-   const responsive1 = {
-    0: {
-        items: 1,
+  // Popular Product Section
+  const responsive1 = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 4 ,
+      itemsFit: 'contain',
     },
-    1024: {
-        items: 5,
-        itemsFit: 'contain',
-    }
   };
-  
-   const popularProducts = PopularProducts.map((products) => {
+
+
+
+  const popularProducts = PopularProducts.map((products) => {
     return <Popularproducts
       title={products.title}
       position={products.position}
@@ -94,7 +96,7 @@ function App() {
 
   // One pic Section  Second Section
 
-  const SectionProduct = sectionProduct.map((product) =>{
+  const SectionProduct = sectionProduct.map((product) => {
     return (
       <div className="card">
         <img src={product.picUrl} className="card-img" />
@@ -114,34 +116,34 @@ function App() {
     console.log(newRating)
   };
 
-  const TwoProduct = twoProduct.map((product) =>{
-    return <Twoproduct 
-     title={product.title}
-     price={product.price}
-     pic={product.pic}/>
+  const TwoProduct = twoProduct.map((product) => {
+    return <Twoproduct
+      title={product.title}
+      price={product.price}
+      pic={product.pic} />
   })
- 
-  const Product = product.map((data)=>{
+
+  const Product = product.map((data) => {
     return (
       <Card>
         <div className='d-flex oneproduct-container'>
-        <Card.Img className='thirdimg' src={data.pic}></Card.Img>
-        <Card.Body className='m-auto'>
-          <h5>{data.title}</h5>
-          <p>{data.price}</p>
-          <ReactStars
-                count={5}
-                onChange={ratingChanged}
-                size={24}
-                activeColor="#ffd700"
-              />
-         
-          <button className='d-flex button-container'>
-            <div className='my-auto mx-2'>Add to cart</div>
-            <div className="button-circle"><i class="bi bi-cart3"></i></div>
-          </button>
-        </Card.Body>
-      </div>
+          <Card.Img className='thirdimg' src={data.pic}></Card.Img>
+          <Card.Body className='m-auto'>
+            <h5>{data.title}</h5>
+            <p>{data.price}</p>
+            <ReactStars
+              count={5}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
+            />
+
+            <button className='d-flex button-container'>
+              <div className='my-auto mx-2'>Add to cart</div>
+              <div className="button-circle"><i class="bi bi-cart3"></i></div>
+            </button>
+          </Card.Body>
+        </div>
       </Card>
 
     )
@@ -149,31 +151,31 @@ function App() {
 
 
   // Fourth Section 
-  const Fourtsect = fourthsection.map((data)=>{
+  const Fourtsect = fourthsection.map((data) => {
     return (
       <div className="inside-fourthcontainer">
         <div>
-        <img src={data.pic}></img>
+          <img src={data.pic}></img>
         </div>
         <div className='mx-4'>
-        <h4 className="fw-bold">{data.title}</h4>
-        <p>{data.text}</p>
+          <h4 className="fw-bold">{data.title}</h4>
+          <p>{data.text}</p>
         </div>
       </div>
     )
   })
-  
+
   // People Profile Section 
-  const PeopleSec = Peopleprofile.map((data) =>{
-    return <PeopleProfile 
-    name={data.name}
-    text={data.text}
-    pic={data.pic}/>
+  const PeopleSec = Peopleprofile.map((data) => {
+    return <PeopleProfile
+      name={data.name}
+      text={data.text}
+      pic={data.pic} />
   })
 
 
-  // Logos Section--------------------------------
-  const Logos = logos.map((data)=>{
+  // Logos Section
+  const Logos = logos.map((data) => {
     return (
       <div className='mx-4'>
         <img src={data.pic}></img>
@@ -181,31 +183,29 @@ function App() {
     )
   })
 
-// News Section ----------------------------------
+  // News Section 
   const responsive3 = {
     0: { items: 1 },
-    568: { items: 2 },
     1024: { items: 2 },
   };
-  
-  const NewsSection = newsSlider.map((data)=>{
-    return <NewsSec 
-    date={data.date}
-    title={data.title}
-    text={data.text}
-    by={data.by}
-    pic={data.pic}    
+
+  const NewsSection = newsSlider.map((data) => {
+    return <NewsSec
+      date={data.date}
+      title={data.title}
+      text={data.text}
+      by={data.by}
+      pic={data.pic}
     />
   })
 
 
 
-  
 
+  
 
   return (
     <div className="App container">
-
       <div>
         <header className="App-header col-md">
           {header1}
@@ -214,13 +214,11 @@ function App() {
           <MainMenu />
         </div>
       </div>
-
       <div className="Slider">
         <AliceCarousel autoPlayInterval="3000">
           {images}
         </AliceCarousel>
       </div>
-
       <div className='slidercontainer'>
         <AliceCarousel
           duration={400}
@@ -234,11 +232,10 @@ function App() {
           autoPlayDirection="rtl"
           autoPlayActionDisabled={true}
         >
-         {items}
+          {items}
         </AliceCarousel>
       </div>
-
-      <div>
+      <div className='popularproduct-container'>
         <div className="secondtitle-container">
           <h2 className="flex-grow-1">Popular Products</h2>
           <button className="btn-click">Cameras</button>
@@ -246,31 +243,25 @@ function App() {
           <button className="btn-click">Tablets</button>
           <button className="btn-click">Mouse</button>
         </div>
-
-
         <div className="popularPRO">
-        <AliceCarousel
+          <AliceCarousel
           duration={400}
           autoPlay={true}
           startIndex={1}
           fadeOutAnimation={true}
           mouseDragEnabled={true}
           playButtonEnabled={true}
-          responsive={responsive1}
-          autoPlayInterval={2000}
           autoPlayDirection="rtl"
           autoPlayActionDisabled={true}
+           responsive={responsive1}
+           autoPlayInterval={2000}
         >
           {popularProducts}
         </AliceCarousel>
-          {/* {popularProducts} */}
         </div>
-
-
-        <div>
+        <div className='thirdsection-container'>
           {SectionProduct}
         </div>
-
         <div className="threeproduct">
           <div className="one-product">
             {Product}
@@ -279,52 +270,47 @@ function App() {
             {TwoProduct}
           </div>
         </div>
-
-
         <div className='d-flex fourthsect-container'>
           {Fourtsect}
         </div>
-
         <div className="profile-container">
-        <AliceCarousel
-          duration={400}
-          autoPlay={true}
-          startIndex={1}
-          fadeOutAnimation={true}
-          mouseDragEnabled={true}
-          playButtonEnabled={true}
-          responsive={responsive}
-          autoPlayInterval={2000}
-          autoPlayDirection="rtl"
-          autoPlayActionDisabled={true}
-        >
-         {PeopleSec}
-        </AliceCarousel>
+          <AliceCarousel
+            duration={400}
+            autoPlay={true}
+            startIndex={1}
+            fadeOutAnimation={true}
+            mouseDragEnabled={true}
+            playButtonEnabled={true}
+            responsive={responsive}
+            autoPlayInterval={2000}
+            autoPlayDirection="rtl"
+            autoPlayActionDisabled={true}
+          >
+            {PeopleSec}
+          </AliceCarousel>
         </div>
-
         <div className='logo-container'>
-             {Logos}
+          {Logos}
         </div>
-
         <div className="news-container">
-        <AliceCarousel
-          duration={400}
-          autoPlay={true}
-          startIndex={1}
-          fadeOutAnimation={true}
-          mouseDragEnabled={true}
-          playButtonEnabled={true}
-          responsive={responsive3}
-          autoPlayInterval={2000}
-          autoPlayDirection="rtl"
-          autoPlayActionDisabled={true}
-        >
-        {NewsSection}
-        </AliceCarousel>
+          <AliceCarousel
+            duration={400}
+            autoPlay={true}
+            startIndex={1}
+            fadeOutAnimation={true}
+            mouseDragEnabled={true}
+            playButtonEnabled={true}
+            responsive={responsive3}
+            autoPlayInterval={2000}
+            autoPlayDirection="rtl"
+            autoPlayActionDisabled={true}
+          >
+            {NewsSection}
+          </AliceCarousel>
         </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default App ;

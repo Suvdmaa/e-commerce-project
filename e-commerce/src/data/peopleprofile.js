@@ -15,29 +15,29 @@ const Peopleprofile = [
         pic: "images/Ellipse2.png",
     },
     {
-        name: "James Brown",
+        name: "Jane Brown",
         text: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-        pic: "images/Ellipse4.png",
+        pic: "images/p1.webp",
     },
     {
         name: "Michael Miller",
         text: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-        pic: "images/Ellipse4.png",
+        pic: "images/pp2.jpeg",
     },
     {
         name: "David Martinez",
         text: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-        pic: "images/Ellipse4.png",
-    },
-    {
-        name: "Sussan Lee",
-        text: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-        pic: "images/Ellipse4.png",
+        pic: "images/pp3.jpeg",
     },
     {
         name: "Noah Clark",
         text: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-        pic: "images/Ellipse4.png",
+        pic: "images/pp4.jpeg",
+    },
+    {
+        name: "Sussan Lee",
+        text: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
+        pic: "images/p5.jpeg",
     },
 ]
 

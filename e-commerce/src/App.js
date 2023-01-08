@@ -17,6 +17,9 @@ import Peopleprofile from './data/peopleprofile';
 import PeopleProfile from './components/PeopleProfile';
 import NewsSec from './components/NewsSection';
 import newsSlider from './data/newsslider';
+import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerdata';
+import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/footer';
+
 
 
 
@@ -52,7 +55,7 @@ function App() {
     )
   })
 
-  
+
   // Second Slider Section
   const responsive = {
     0: { items: 1 },
@@ -78,12 +81,11 @@ function App() {
   const responsive1 = {
     0: { items: 1 },
     568: { items: 2 },
-    1024: { items: 4 ,
+    1024: {
+      items: 4,
       itemsFit: 'contain',
     },
   };
-
-
 
   const popularProducts = PopularProducts.map((products) => {
     return <Popularproducts
@@ -199,27 +201,56 @@ function App() {
     />
   })
 
+  // Footer
+  const footerMain = footerDataPart1.map((data) => {
+    return <FooterMainSect
+      title={data.title}
+      contact={data.contact}
+      pic={data.pic}
+      sendImg={data.sendImg}
+    />
+
+  })
+
+  const footerAboutSect1 = footerDataPart2.map((data) => {
+    return <FooterAboutFunc1
+      logoPic={data.logoPic}
+      text={data.text}
+      googleLogo={data.googleLogo}
+      fbLogo={data.fbLogo}
+      whatsappLogo={data.whatsappLogo}
+    />
+  })
+
+  const footerAboutSect2 = footerTextData.map((data)=>{
+    return <FooterAboutFunc2 
+    title={data.title}
+    type1={data.type1}
+    type2={data.type2}
+    type3={data.type3}
+    type4={data.type4}
+    type5={data.type5}
+    />
+  })
 
 
-
-  
 
   return (
-    <div className="App container">
+    <div className="App ">
       <div>
         <header className="App-header col-md">
           {header1}
         </header>
-        <div className="menu-container">
+        <div className="menu-container bg-light">
           <MainMenu />
         </div>
       </div>
-      <div className="Slider">
+      <div className="Slider container">
         <AliceCarousel autoPlayInterval="3000">
           {images}
         </AliceCarousel>
       </div>
-      <div className='slidercontainer'>
+      <div className='slidercontainer container'>
         <AliceCarousel
           duration={400}
           autoPlay={true}
@@ -235,16 +266,15 @@ function App() {
           {items}
         </AliceCarousel>
       </div>
-      <div className='popularproduct-container'>
-        <div className="secondtitle-container">
-          <h2 className="flex-grow-1">Popular Products</h2>
-          <button className="btn-click">Cameras</button>
-          <button className="btn-click">Laptops</button>
-          <button className="btn-click">Tablets</button>
-          <button className="btn-click">Mouse</button>
-        </div>
-        <div className="popularPRO">
-          <AliceCarousel
+      <div className="secondtitle-container container">
+        <h2 className="flex-grow-1">Popular Products</h2>
+        <button className="btn-click">Cameras</button>
+        <button className="btn-click">Laptops</button>
+        <button className="btn-click">Tablets</button>
+        <button className="btn-click">Mouse</button>
+      </div>
+      <div className="popularPRO container">
+        <AliceCarousel
           duration={400}
           autoPlay={true}
           startIndex={1}
@@ -253,15 +283,16 @@ function App() {
           playButtonEnabled={true}
           autoPlayDirection="rtl"
           autoPlayActionDisabled={true}
-           responsive={responsive1}
-           autoPlayInterval={2000}
+          responsive={responsive1}
+          autoPlayInterval={2000}
         >
           {popularProducts}
         </AliceCarousel>
-        </div>
-        <div className='thirdsection-container'>
-          {SectionProduct}
-        </div>
+      </div>
+      <div className='thirdsection-container container'>
+        {SectionProduct}
+      </div>
+      <div className='container'>
         <div className="threeproduct">
           <div className="one-product">
             {Product}
@@ -270,47 +301,70 @@ function App() {
             {TwoProduct}
           </div>
         </div>
-        <div className='d-flex fourthsect-container'>
-          {Fourtsect}
-        </div>
-        <div className="profile-container">
-          <AliceCarousel
-            duration={400}
-            autoPlay={true}
-            startIndex={1}
-            fadeOutAnimation={true}
-            mouseDragEnabled={true}
-            playButtonEnabled={true}
-            responsive={responsive}
-            autoPlayInterval={2000}
-            autoPlayDirection="rtl"
-            autoPlayActionDisabled={true}
-          >
-            {PeopleSec}
-          </AliceCarousel>
-        </div>
+      </div>
+
+      <div className='d-flex fourthsect-container container'>
+        {Fourtsect}
+      </div>
+      <div className="profile-container container">
+        <AliceCarousel
+          duration={400}
+          autoPlay={true}
+          startIndex={1}
+          fadeOutAnimation={true}
+          mouseDragEnabled={true}
+          playButtonEnabled={true}
+          responsive={responsive}
+          autoPlayInterval={2000}
+          autoPlayDirection="rtl"
+          autoPlayActionDisabled={true}
+        >
+          {PeopleSec}
+        </AliceCarousel>
+      </div>
+      <div className='container'>
+
         <div className='logo-container'>
           {Logos}
         </div>
-        <div className="news-container">
-          <AliceCarousel
-            duration={400}
-            autoPlay={true}
-            startIndex={1}
-            fadeOutAnimation={true}
-            mouseDragEnabled={true}
-            playButtonEnabled={true}
-            responsive={responsive3}
-            autoPlayInterval={2000}
-            autoPlayDirection="rtl"
-            autoPlayActionDisabled={true}
-          >
-            {NewsSection}
-          </AliceCarousel>
+      </div>
+
+
+      <div className="news-container container">
+        <div className="news-header">
+          <h4 className='fw-bold'>Latest news</h4>
+          <h5><a>View all</a></h5>
+        </div>
+        <AliceCarousel
+          duration={400}
+          autoPlay={true}
+          startIndex={1}
+          fadeOutAnimation={true}
+          mouseDragEnabled={true}
+          playButtonEnabled={true}
+          responsive={responsive3}
+          autoPlayInterval={2000}
+          autoPlayDirection="rtl"
+          autoPlayActionDisabled={true}
+        >
+          {NewsSection}
+        </AliceCarousel>
+      </div>
+      <div className='footer-container'>
+        <div className='container'>
+          <div>
+            {footerMain}
+          </div>
+          <div className='footerabout-container'>
+            {footerAboutSect1}
+            {footerAboutSect2}
+          </div>
+
         </div>
       </div>
+
     </div>
   );
 }
 
-export default App ;
+export default App;

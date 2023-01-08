@@ -19,7 +19,7 @@ export default function MainMenu(){
     })
 
     return( 
-        <div>
+        <div className="container">
             {/* <div>Here is main menu</div> */}
             <Navbar bg='light' expand="lg" className="d-flex justify-content-around" >
                 <div className="cate p-3 text-white">{SecondCate}</div>

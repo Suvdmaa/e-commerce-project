@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { header, PopularProducts, sectionProduct } from './data/Seed';
+import { header, PopularProductsData, sectionProduct } from './data/Seed';
 import ProductFunc from './components/ProductFunc';
 import MainMenu from './components/MainMenu';
 import AliceCarousel from "react-alice-carousel"
@@ -19,6 +19,8 @@ import NewsSec from './components/NewsSection';
 import newsSlider from './data/newsslider';
 import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerdata';
 import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/footer';
+import LogosFunc from './components/logos';
+import FourthFunc from './components/fourthsection';
 
 
 
@@ -77,24 +79,24 @@ function App() {
     )
   })
 
-  // Popular Product Section
-  const responsive1 = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: {
-      items: 4,
-      itemsFit: 'contain',
-    },
-  };
-
-  const popularProducts = PopularProducts.map((products) => {
-    return <Popularproducts
-      title={products.title}
-      position={products.position}
-      price={products.price}
-      picUrl={products.picUrl}
+  const popularProducts = PopularProductsData.map((data) => {
+    console.log(data)
+    const result = data.products.map(product => {
+      return <Popularproducts
+      title={product.title}
+      position={product.position}
+      price={product.price}
+      picUrl={product.picUrl}
+      id={product.id}
     />
-  })
+    })
+
+    return (
+      <div className='d-flex flex-wrap'>
+        {result}
+      </div>
+    )}
+  )
 
   // One pic Section  Second Section
 
@@ -154,17 +156,11 @@ function App() {
 
   // Fourth Section 
   const Fourtsect = fourthsection.map((data) => {
-    return (
-      <div className="inside-fourthcontainer">
-        <div>
-          <img src={data.pic}></img>
-        </div>
-        <div className='mx-4'>
-          <h4 className="fw-bold">{data.title}</h4>
-          <p>{data.text}</p>
-        </div>
-      </div>
-    )
+    return <FourthFunc 
+    pic={data.pic}
+    title={data.title}
+    text={data.text}
+    />
   })
 
   // People Profile Section 
@@ -178,11 +174,8 @@ function App() {
 
   // Logos Section
   const Logos = logos.map((data) => {
-    return (
-      <div className='mx-4'>
-        <img src={data.pic}></img>
-      </div>
-    )
+    return <LogosFunc 
+    pic={data.pic}/>
   })
 
   // News Section 
@@ -283,10 +276,10 @@ function App() {
           playButtonEnabled={true}
           autoPlayDirection="rtl"
           autoPlayActionDisabled={true}
-          responsive={responsive1}
+          // responsive={responsive1}
           autoPlayInterval={2000}
         >
-          {popularProducts}
+          {popularProducts} 
         </AliceCarousel>
       </div>
       <div className='thirdsection-container container'>
@@ -319,7 +312,8 @@ function App() {
           autoPlayDirection="rtl"
           autoPlayActionDisabled={true}
         >
-          {PeopleSec}
+       
+             {PeopleSec}
         </AliceCarousel>
       </div>
       <div className='container'>

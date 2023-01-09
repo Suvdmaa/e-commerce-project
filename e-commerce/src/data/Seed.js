@@ -94,6 +94,7 @@ const PopularProductsData = [
                 picUrl: "images/t5.jpg",
                 rating: "2,3",
                 id: '9',
+                genre: "Tablets",
             },
             {
                 title: "Bengoo Gaming Mouse",
@@ -101,6 +102,7 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/m2.jpeg",
                 id: '10',
+                genre: "Mouse",
             },
             {
                 title: "Bengoo G9000 Wireless headphones",
@@ -108,6 +110,7 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/h3.jpg",
                 id: '11',
+                genre: "Headphones"
             },
             {
                 title: "Gaming controller",
@@ -115,6 +118,7 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/m10.jpg",
                 id: '12',
+                genre: "game-controller",
             },
             {
                 title: "Tablet",
@@ -122,6 +126,7 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/t1.webp",
                 id:'13',
+                genre: "Tablets",
             },
             {
                 title: "Gaming Mouse",
@@ -129,13 +134,15 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/m3.jpeg",
                 id:"14",
+                genre: "Mouse",
             },
             {
-                title: "Play game",
+                title: "Tablet",
                 position: 7,
                 price: "$11,70",
                 picUrl: "images/t2.png",
                 id:"15",
+                genre: "Tablets",
             },
             {
                 title: "Gaming Mouse",
@@ -143,6 +150,7 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/m1.jpeg",
                 id: "16",
+                genre: "Mouse",
             },
         ]
     }
@@ -157,6 +165,21 @@ const sectionProduct = [
     }
 ]
 
+const genreData = [
+    {
+        name: "Cameras"
+    },
+    {
+        name: "Laptops"
+    },
+    {
+        name: "Tablets"
+    },
+    {
+        name: "Mouse"
+    },
+]
 
-export { header, PopularProductsData, sectionProduct}
+
+export { header, PopularProductsData, sectionProduct, genreData}
 

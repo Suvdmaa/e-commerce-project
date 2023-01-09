@@ -224,11 +224,6 @@
 }
 /*=============================================================*/
 
-.popularPRO .alice-carousel__stage {
-   display: flex; 
-  flex-wrap: wrap; 
-}
-
 .popularPRO .alice-carousel__next-btn-wrapper, 
 .popularPRO .alice-carousel__prev-btn-wrapper
 {
@@ -355,7 +350,7 @@
 }
 
 .news-container{
-  margin-top: 7%;
+  margin: 4% 0 3% 0;
 }
 
 .innernews-container{

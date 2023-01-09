@@ -2,9 +2,15 @@ import Card from 'react-bootstrap/Card';
 import ReactStars from "react-rating-stars-component";
 
 function Popularproducts(props) {
+
     const ratingChanged = (newRating) => {
       console.log(newRating)
     };
+
+    function handleUpVote(props){
+      console.log('upvoted')
+      console.log(props.id)
+    }
     return (
       <div className="popular-products">
         <Card className="card-style">
@@ -20,7 +26,7 @@ function Popularproducts(props) {
                   size={24}
                   activeColor="#ffd700"
                 />
-               <p className="cart"><i class="bi bi-cart3"></i></p>
+               <a onClick={() => {handleUpVote(props)}} className="cart"><i class="bi bi-cart3"></i></a>
               </div>
             </div>
           </Card.Body>

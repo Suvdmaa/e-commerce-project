@@ -1,5 +1,33 @@
 import Card from 'react-bootstrap/Card';
 import ReactStars from "react-rating-stars-component";
+import { PopularProductsData } from '../data/Seed';
+
+
+
+function GenreFunc (props){
+  function clickMe(props){
+    console.log("upvoted")
+    for(let i = 0; i < props.name; i++){
+      
+      if(props.name == PopularProductsData.products[i].genre){
+        console.log(props.name)
+      } else{
+        console.log("It's not working")
+      }
+    }
+    // const container = document.querySelector("#popularP")
+    // container.innerHTML = "";
+    // let result = "";
+    // genres.map((data)=>{
+    //   result += Popularproducts(data)
+    // })
+    // container.innerHTML = result;
+
+  }
+  return (
+    <button className="btn-click" onClick={() => {clickMe(props)}}>{props.name}</button>
+  )
+}
 
 function Popularproducts(props) {
 
@@ -12,7 +40,7 @@ function Popularproducts(props) {
       console.log(props.id)
     }
     return (
-      <div className="popular-products">
+      <div className="popular-products" id="popularP">
         <Card className="card-style">
           <Card.Img className="card-image" src={props.picUrl} />
           <Card.Body className="cart-container">
@@ -35,4 +63,4 @@ function Popularproducts(props) {
     )
   }
 
-export default Popularproducts
+export {Popularproducts , GenreFunc}

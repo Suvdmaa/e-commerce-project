@@ -1,18 +1,18 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { header, PopularProductsData, sectionProduct } from './data/Seed';
+import { genreData, header, PopularProductsData, sectionProduct } from './data/Seed';
 import ProductFunc from './components/ProductFunc';
 import MainMenu from './components/MainMenu';
 import AliceCarousel from "react-alice-carousel"
 import carouselData from './data/carousel';
 import SecondSliderProduct from './data/secondcarousel';
 import { product, twoProduct } from './data/thirdsection';
-import { Twoproduct } from "./components/thirdsection"
+import { OneProduct, Twoproduct } from "./components/thirdsection"
 import { Card, Carousel } from 'react-bootstrap';
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
 import { fourthsection, logos } from './data/fourthsection';
-import Popularproducts from './components/PopularProducts';
+import {Popularproducts,  GenreFunc } from './components/PopularProducts';
 import Peopleprofile from './data/peopleprofile';
 import PeopleProfile from './components/PeopleProfile';
 import NewsSec from './components/NewsSection';
@@ -21,8 +21,7 @@ import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerd
 import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/footer';
 import LogosFunc from './components/logos';
 import FourthFunc from './components/fourthsection';
-
-
+import SectionProFunc from './components/sectionProduct';
 
 
 function App() {
@@ -57,7 +56,6 @@ function App() {
     )
   })
 
-
   // Second Slider Section
   const responsive = {
     0: { items: 1 },
@@ -79,47 +77,43 @@ function App() {
     )
   })
 
+
+  // Popular Product Genre
+
+  const GenreSect = genreData.map((data)=>{
+    return <GenreFunc name={data.name}/>
+  })
+  // Popular Product
+
   const popularProducts = PopularProductsData.map((data) => {
     console.log(data)
     const result = data.products.map(product => {
       return <Popularproducts
-      title={product.title}
-      position={product.position}
-      price={product.price}
-      picUrl={product.picUrl}
-      id={product.id}
-    />
+        title={product.title}
+        position={product.position}
+        price={product.price}
+        picUrl={product.picUrl}
+        id={product.id}
+      />
     })
-
     return (
       <div className='d-flex flex-wrap'>
         {result}
       </div>
-    )}
+    )
+  }
   )
 
-  // One pic Section  Second Section
-
+  // One pic Section - Second Section
   const SectionProduct = sectionProduct.map((product) => {
-    return (
-      <div className="card">
-        <img src={product.picUrl} className="card-img" />
-        <div className="card-img-overlay innertext">
-          <button className="card-btn">New laptop</button>
-          <h5 className="card-title">{product.text}</h5>
-          <p className="card-text">{product.description}</p>
-          <button className="card-btn">Shop now</button>
-        </div>
-      </div>
-    )
+    return <SectionProFunc
+      picUrl={product.picUrl}
+      text={product.text}
+      description={product.description}
+    />
   })
 
   // Section with three Product  Third Section
-
-  const ratingChanged = (newRating) => {
-    console.log(newRating)
-  };
-
   const TwoProduct = twoProduct.map((product) => {
     return <Twoproduct
       title={product.title}
@@ -128,38 +122,19 @@ function App() {
   })
 
   const Product = product.map((data) => {
-    return (
-      <Card>
-        <div className='d-flex oneproduct-container'>
-          <Card.Img className='thirdimg' src={data.pic}></Card.Img>
-          <Card.Body className='m-auto'>
-            <h5>{data.title}</h5>
-            <p>{data.price}</p>
-            <ReactStars
-              count={5}
-              onChange={ratingChanged}
-              size={24}
-              activeColor="#ffd700"
-            />
-
-            <button className='d-flex button-container'>
-              <div className='my-auto mx-2'>Add to cart</div>
-              <div className="button-circle"><i class="bi bi-cart3"></i></div>
-            </button>
-          </Card.Body>
-        </div>
-      </Card>
-
-    )
+    return <OneProduct
+      pic={data.pic}
+      title={data.title}
+      price={data.price}
+    />
   })
-
 
   // Fourth Section 
   const Fourtsect = fourthsection.map((data) => {
-    return <FourthFunc 
-    pic={data.pic}
-    title={data.title}
-    text={data.text}
+    return <FourthFunc
+      pic={data.pic}
+      title={data.title}
+      text={data.text}
     />
   })
 
@@ -174,8 +149,8 @@ function App() {
 
   // Logos Section
   const Logos = logos.map((data) => {
-    return <LogosFunc 
-    pic={data.pic}/>
+    return <LogosFunc
+      pic={data.pic} />
   })
 
   // News Section 
@@ -215,18 +190,18 @@ function App() {
     />
   })
 
-  const footerAboutSect2 = footerTextData.map((data)=>{
-    return <FooterAboutFunc2 
-    title={data.title}
-    type1={data.type1}
-    type2={data.type2}
-    type3={data.type3}
-    type4={data.type4}
-    type5={data.type5}
+  const footerAboutSect2 = footerTextData.map((data) => {
+    return <FooterAboutFunc2
+      title={data.title}
+      type1={data.type1}
+      type2={data.type2}
+      type3={data.type3}
+      type4={data.type4}
+      type5={data.type5}
     />
   })
 
-
+ 
 
   return (
     <div className="App ">
@@ -261,12 +236,13 @@ function App() {
       </div>
       <div className="secondtitle-container container">
         <h2 className="flex-grow-1">Popular Products</h2>
-        <button className="btn-click">Cameras</button>
+        {GenreSect}
+        {/* <button className="btn-click" onClick={handleUpVote} value="Cameras">Cameras</button>
         <button className="btn-click">Laptops</button>
         <button className="btn-click">Tablets</button>
-        <button className="btn-click">Mouse</button>
+        <button className="btn-click">Mouse</button> */}
       </div>
-      <div className="popularPRO container">
+      <div className="popularPRO container" id="popularP">
         <AliceCarousel
           duration={400}
           autoPlay={true}
@@ -279,7 +255,7 @@ function App() {
           // responsive={responsive1}
           autoPlayInterval={2000}
         >
-          {popularProducts} 
+          {popularProducts}
         </AliceCarousel>
       </div>
       <div className='thirdsection-container container'>
@@ -295,7 +271,6 @@ function App() {
           </div>
         </div>
       </div>
-
       <div className='d-flex fourthsect-container container'>
         {Fourtsect}
       </div>
@@ -312,18 +287,14 @@ function App() {
           autoPlayDirection="rtl"
           autoPlayActionDisabled={true}
         >
-       
-             {PeopleSec}
+          {PeopleSec}
         </AliceCarousel>
       </div>
       <div className='container'>
-
         <div className='logo-container'>
           {Logos}
         </div>
       </div>
-
-
       <div className="news-container container">
         <div className="news-header">
           <h4 className='fw-bold'>Latest news</h4>
@@ -353,7 +324,6 @@ function App() {
             {footerAboutSect1}
             {footerAboutSect2}
           </div>
-
         </div>
       </div>
 

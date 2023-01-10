@@ -8,9 +8,7 @@ import AliceCarousel from "react-alice-carousel"
 import carouselData from './data/carousel';
 import SecondSliderProduct from './data/secondcarousel';
 import { product, twoProduct } from './data/thirdsection';
-import { OneProduct, Twoproduct } from "./components/thirdsection"
-import { Card, Carousel } from 'react-bootstrap';
-// import ReactStars from "react-rating-stars-component";
+import { OneProduct, Twoproduct } from "./components/Thirdsection"
 import { fourthsection, logos } from './data/fourthsection';
 import {Popularproducts,  GenreFunc } from './components/PopularProducts';
 import Peopleprofile from './data/peopleprofile';
@@ -18,10 +16,10 @@ import PeopleProfile from './components/PeopleProfile';
 import NewsSec from './components/NewsSection';
 import newsSlider from './data/newsslider';
 import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerdata';
-import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/footer';
-import LogosFunc from './components/logos';
-import FourthFunc from './components/fourthsection';
-import SectionProFunc from './components/sectionProduct';
+import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/Footer';
+import LogosFunc from './components/Logos';
+import FourthFunc from './components/Fourthsection';
+import SectionProFunc from './components/SectionProduct';
 
 
 function App() {
@@ -94,6 +92,7 @@ function App() {
         price={product.price}
         picUrl={product.picUrl}
         id={product.id}
+        stars={product.stars}
       />
     })
     return (
@@ -180,7 +179,7 @@ function App() {
 
   })
 
-  const footerAboutSect1 = footerDataPart2.map((data) => {
+  const footerAboutRight = footerDataPart2.map((data) => {
     return <FooterAboutFunc1
       logoPic={data.logoPic}
       text={data.text}
@@ -190,7 +189,7 @@ function App() {
     />
   })
 
-  const footerAboutSect2 = footerTextData.map((data) => {
+  const footerAboutLeft = footerTextData.map((data) => {
     return <FooterAboutFunc2
       title={data.title}
       type1={data.type1}
@@ -321,12 +320,11 @@ function App() {
             {footerMain}
           </div>
           <div className='footerabout-container'>
-            {footerAboutSect1}
-            {footerAboutSect2}
+            {footerAboutRight}
+            {footerAboutLeft}
           </div>
         </div>
       </div>
-
     </div>
   );
 }

@@ -2,6 +2,12 @@ function generateVoteCount() {
     return Math.floor((Math.random() * 50) + 15)
 }
 
+function generateStarsCount(){
+    return Math.floor((Math.random() * 6) + 1)
+}
+
+
+
 const header = [
     {
         text: "Need help? Call us: (+98) 0234 456 789",
@@ -9,7 +15,7 @@ const header = [
         order: "Track your order",
         url: "#",
         votes: generateVoteCount(),
-        logoUrl: "images/logo-1.svg"
+        logoUrl: "images/logo-1.svg",
     },
 ];
 
@@ -25,6 +31,7 @@ const PopularProductsData = [
                 rating: "2,3",
                 id: '1',
                 genre: "Cameras",
+                stars: generateStarsCount()
             },
             {
                 title: "Wireless headphones",
@@ -32,7 +39,8 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/Frame.png",
                 id: '2',
-                genre: "Headphones"
+                genre: "Headphones",
+                stars: generateStarsCount()
             },
             {
                 title: "Wireless headphones",
@@ -40,7 +48,8 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/ear-12.webp",
                 id: '3',
-                genre: "Headphones"
+                genre: "Headphones",
+                stars: generateStarsCount()
             },
             {
                 title: "Play game",
@@ -49,6 +58,7 @@ const PopularProductsData = [
                 picUrl: "images/Frame1.png",
                 id: '4',
                 genre: "game-controller",
+                stars: generateStarsCount()
             },
             {
                 title: "Play game",
@@ -57,6 +67,7 @@ const PopularProductsData = [
                 picUrl: "images/xbox.jpeg",
                 id:'5',
                 genre: "game-controller",
+                stars: generateStarsCount(),
             },
             {
                 title: "Tablet as a laptop",
@@ -65,6 +76,7 @@ const PopularProductsData = [
                 picUrl: "images/Frame29.png",
                 id:"6",
                 genre: "Laptops",
+                stars: generateStarsCount(),
             },
             {
                 title: "Play game",
@@ -73,6 +85,7 @@ const PopularProductsData = [
                 picUrl: "images/x-box-1.jpeg",
                 id:"7",
                 genre: "game-controller",
+                stars: generateStarsCount(),
             },
             {
                 title: "Tablet as a laptop",
@@ -81,6 +94,7 @@ const PopularProductsData = [
                 picUrl: "images/laptop1.png",
                 id: "8",
                 genre: "Laptops",
+                stars: generateStarsCount(),
             },
         ]
     },
@@ -95,6 +109,7 @@ const PopularProductsData = [
                 rating: "2,3",
                 id: '9',
                 genre: "Tablets",
+                stars: generateStarsCount(),
             },
             {
                 title: "Bengoo Gaming Mouse",
@@ -103,6 +118,7 @@ const PopularProductsData = [
                 picUrl: "images/m2.jpeg",
                 id: '10',
                 genre: "Mouse",
+                stars: generateStarsCount(),
             },
             {
                 title: "Bengoo G9000 Wireless headphones",
@@ -110,7 +126,8 @@ const PopularProductsData = [
                 price: "$11,70",
                 picUrl: "images/h3.jpg",
                 id: '11',
-                genre: "Headphones"
+                genre: "Headphones",
+                stars: generateStarsCount(),
             },
             {
                 title: "Gaming controller",
@@ -119,6 +136,7 @@ const PopularProductsData = [
                 picUrl: "images/m10.jpg",
                 id: '12',
                 genre: "game-controller",
+                stars: generateStarsCount(),
             },
             {
                 title: "Tablet",
@@ -127,6 +145,7 @@ const PopularProductsData = [
                 picUrl: "images/t1.webp",
                 id:'13',
                 genre: "Tablets",
+                stars: generateStarsCount(),
             },
             {
                 title: "Gaming Mouse",
@@ -135,6 +154,7 @@ const PopularProductsData = [
                 picUrl: "images/m3.jpeg",
                 id:"14",
                 genre: "Mouse",
+                stars: generateStarsCount(),
             },
             {
                 title: "Tablet",
@@ -143,6 +163,7 @@ const PopularProductsData = [
                 picUrl: "images/t2.png",
                 id:"15",
                 genre: "Tablets",
+                stars: generateStarsCount(),
             },
             {
                 title: "Gaming Mouse",
@@ -151,6 +172,7 @@ const PopularProductsData = [
                 picUrl: "images/m1.jpeg",
                 id: "16",
                 genre: "Mouse",
+                stars: generateStarsCount(),
             },
         ]
     }

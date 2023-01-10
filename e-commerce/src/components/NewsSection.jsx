@@ -5,7 +5,7 @@ function NewsSec (props){
             <img className="news-img" src={props.pic}></img>
             </div>
             <div className="news-text">
-                <p>{props.date}</p>
+                <p className="date">{props.date}</p>
                 <h4>{props.title}</h4>
                 <p>{props.text}</p>
                 <p>{props.by}</p>

@@ -1,9 +1,6 @@
-import ReactStars from "react-rating-stars-component";
 import Card from 'react-bootstrap/Card';
+import { Rating } from "react-simple-star-rating";
 
-const ratingChanged = (newRating) => {
-    console.log(newRating)
-};
 
 function Twoproduct(props) {
     return (
@@ -16,17 +13,12 @@ function Twoproduct(props) {
                 <div className="m-auto">
                     <h5>{props.title}</h5>
                     <p>{props.price}</p>
-                    <ReactStars
-                        count={5}
-                        onChange={ratingChanged}
-                        size={24}
-                        activeColor="#ffd700"
-                    />
+                    <Rating 
+                    initialValue={props.stars}/>
                 </div>
             </div>
         </Card>
-
-        </div>
+      </div>
     )
 }
 
@@ -38,11 +30,8 @@ function OneProduct(props){
           <Card.Body className='m-auto'>
             <h5>{props.title}</h5>
             <p>{props.price}</p>
-            <ReactStars
-              count={5}
-              onChange={ratingChanged}
-              size={24}
-              activeColor="#ffd700"
+            <Rating 
+            initialValue={props.stars}
             />
 
             <button className='d-flex button-container'>

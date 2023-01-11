@@ -45,7 +45,7 @@ function Popularproducts(props) {
 
     function handleUpVote(props){
       console.log('upvoted')
-      console.log(props.title)
+      console.log(props.id)
     }
     return (
       <div className="popular-products" id="popularP">

@@ -117,7 +117,8 @@ function App() {
     return <Twoproduct
       title={product.title}
       price={product.price}
-      pic={product.pic} />
+      pic={product.pic}
+      stars={product.stars} />
   })
 
   const Product = product.map((data) => {
@@ -125,6 +126,7 @@ function App() {
       pic={data.pic}
       title={data.title}
       price={data.price}
+      stars={data.stars}
     />
   })
 

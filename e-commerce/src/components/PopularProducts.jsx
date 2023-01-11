@@ -1,5 +1,4 @@
 import Card from 'react-bootstrap/Card';
-import ReactStars from "react-rating-stars-component";
 import { PopularProductsData } from '../data/Seed';
 import {Rating} from "react-simple-star-rating"
 
@@ -39,9 +38,6 @@ function clickMe(props){
 
 function Popularproducts(props) {
 
-    const ratingChanged = (newRating) => {
-      console.log(newRating)
-    };
 
     function handleUpVote(props){
       console.log('upvoted')
@@ -57,12 +53,6 @@ function Popularproducts(props) {
             <div className="d-flex">
               <div>
                 <p>{props.price}</p>
-                {/* <ReactStars
-                  count={5}
-                  onChange={ratingChanged}
-                  size={24}
-                  activeColor="#ffd700"
-                /> */}
                 <Rating 
                 initialValue={props.stars}/>
                <a onClick={() => {handleUpVote(props)}} className="cart"><i class="bi bi-cart3"></i></a>

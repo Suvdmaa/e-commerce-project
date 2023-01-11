@@ -3,7 +3,7 @@ function generateVoteCount() {
 }
 
 function generateStarsCount(){
-    return Math.floor((Math.random() * 6) + 1)
+    return Math.floor((Math.random() * 5) + 1)
 }
 
 function generateIdCount(){
@@ -50,7 +50,85 @@ const PopularProductsData = [
                 position: 3,
                 price: "$11,70",
                 picUrl: "images/Frame.png",
-                id: generateIdCount(),
+                id: '3',
+                genre: "Headphones",
+                stars: generateStarsCount()
+            },
+            {
+                title: "Play game",
+                position: 4,
+                price: "$11,70",
+                picUrl: "images/Frame1.png",
+                id: '4',
+                genre: "game-controller",
+                stars: generateStarsCount()
+            },
+            {
+                title: "Play game",
+                position: 5,
+                price: "$11,70",
+                picUrl: "images/Frame1.png",
+                id:'5',
+                genre: "game-controller",
+                stars: generateStarsCount(),
+            },
+            {
+                title: "Tablet as a laptop",
+                position: 6,
+                price: "$11,70",
+                picUrl: "images/Frame29.png",
+                id:"6",
+                genre: "Laptops",
+                stars: generateStarsCount(),
+            },
+            {
+                title: "Play game",
+                position: 7,
+                price: "$11,70",
+                picUrl: "images/Frame1.png",
+                id:"7",
+                genre: "game-controller",
+                stars: generateStarsCount(),
+            },
+            {
+                title: "Tablet as a laptop",
+                position: 8,
+                price: "$11,70",
+                picUrl: "images/Frame29.png",
+                id: "8",
+                genre: "Laptops",
+                stars: generateStarsCount(),
+            },
+        ]
+    },
+    {
+        page: 2,
+        products: [
+            {
+                title: "Camera",
+                position: 1,
+                price: "$11,70",
+                picUrl: "images/camera.png",
+                rating: "2,3",
+                id: '1',
+                genre: "Cameras",
+                stars: generateStarsCount()
+            },
+            {
+                title: "Wireless headphones",
+                position: 2,
+                price: "$11,70",
+                picUrl: "images/Frame.png",
+                id: '2',
+                genre: "Headphones",
+                stars: generateStarsCount()
+            },
+            {
+                title: "Wireless headphones",
+                position: 3,
+                price: "$11,70",
+                picUrl: "images/ear-12.webp",
+                id: '3',
                 genre: "Headphones",
                 stars: generateStarsCount()
             },
@@ -102,7 +180,7 @@ const PopularProductsData = [
         ]
     },
     {
-        page: 2,
+        page: 3,
         products: [
             {
                 title: "Camera",

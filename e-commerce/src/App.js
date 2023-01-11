@@ -24,7 +24,7 @@ import SectionProFunc from './components/SectionProduct';
 
 function App() {
   // Header Section
-  const header1 = header.map((header) => {
+  const HeaderSect = header.map((header) => {
     return <ProductFunc
       text={header.text}
       description={header.description}
@@ -201,12 +201,11 @@ function App() {
   })
 
  
-
   return (
     <div className="App ">
       <div>
         <header className="App-header col-md">
-          {header1}
+          {HeaderSect}
         </header>
         <div className="menu-container bg-light">
           <MainMenu />

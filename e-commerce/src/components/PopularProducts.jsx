@@ -39,33 +39,6 @@ function clickMe(props) {
 
 
 function Popularproducts(props) {
-
-<<<<<<< HEAD
-
-    function handleUpVote(props){
-      console.log('upvoted')
-      console.log(props.id)
-    }
-    return (
-      <div className="popular-products" id="popularP">
-        <Card className="card-style">
-          <Card.Img className="card-image" src={props.picUrl} />
-          <button className="btn-heart" ><i class="fa-regular fa-heart"></i></button>
-          <Card.Body className="cart-container">
-            <h5>{props.title}</h5>
-            <div className="d-flex">
-              <div>
-                <p>{props.price}</p>
-                <Rating 
-                initialValue={props.stars}/>
-               <a onClick={() => {handleUpVote(props)}} className="cart"><i class="bi bi-cart3"></i></a>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </div>
-    )
-=======
   const [show, setShow] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
 
@@ -74,14 +47,11 @@ function Popularproducts(props) {
   function handleUpVote(props) {
     console.log('upvoted')
     console.log(props.title)
->>>>>>> refs/remotes/origin/suvdmaa
   }
   return (
     <div className="popular-products" id="popularP">
       <Card className="card-style">
-        <Card.Img className="card-image" src={props.picUrl} onClick={() => {
-          setShow(!show)
-        }} />
+        <Card.Img className="card-image" src={props.picUrl} onClick={() => {setShow(!show)}} />
         <button className="btn-heart" ><i class="fa-regular fa-heart"></i></button>
         <Card.Body className="cart-container">
           <h5>{props.title}</h5>

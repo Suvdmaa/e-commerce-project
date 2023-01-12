@@ -8,7 +8,7 @@ export default function DetailProductFunc(props) {
         <div>
             <div className="card d-card">
                 <img className="dcard-image" src={props.pic}></img>
-                <div className="card-body d-body">
+                <div className="d-body">
                     <h5 className="card-title">
                         {props.title}
                     </h5>

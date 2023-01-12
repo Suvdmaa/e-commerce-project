@@ -78,6 +78,19 @@ const oneProductData = [
     }
 ]
 
+const reviewData = [
+    {
+        title: 'Customer reviews',
+        text: "No reviews yet",
+        btn: "Write a review",
+    }
+]
+
+
+
+
+
+
 
 
 export {
@@ -86,5 +99,6 @@ export {
     categoryData, 
     logoData, 
     productData,
-    oneProductData
+    oneProductData,
+    reviewData
 }

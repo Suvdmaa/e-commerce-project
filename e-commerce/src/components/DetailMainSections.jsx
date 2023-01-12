@@ -38,7 +38,7 @@ export default function DetailMainSection(props) {
                     <img src={props.picUrl2}></img>
                 </div>
             </div>
-            <div className="col-6 pt-4 px-3 m-5">
+            <div className="col-6 pt-3 px-3 m-5">
                 <div>
                     <h3 className="dmain-title">{props.title}</h3>
                     <h3 className="fw-bold my-3">{props.price}</h3>
@@ -49,8 +49,10 @@ export default function DetailMainSection(props) {
                 <hr></hr>
                 <div>
                     <p className="my-4"><span className="fw-bold">Color:</span>
-                      <button className="d-colorbtn"></button>
-                      <button className="d-colorbtn"></button>
+                      <button className="d-circlebtn d-colorbtn">
+                        
+                        </button>
+                      <button className="d-circlebtn d-secondcolorbtn"></button>
                     </p>
                     <p className="d-flex align-items-center my-4"><span className="fw-bold">Size:</span>{sizes}</p>
                     <p className="my-4"><span className="fw-bold">Quantity:</span></p>

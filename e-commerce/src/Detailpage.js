@@ -2,11 +2,12 @@ import ProductFunc from "./components/ProductFuncSections"
 import MainMenu from "./components/MainMenuSections"
 import { Modal, ModalBody } from "react-bootstrap";
 import { header } from "./data/SeedData";
-import { MainSectData, oneProductData, productData } from "./data/detaildata";
+import { MainSectData, oneProductData, productData, reviewData } from "./data/detaildata";
 import DetailMainSection from "./components/DetailMainSections";
 import { FooterMainSect, FooterAboutFunc1 , FooterAboutFunc2} from "./components/FooterSections";
 import { footerDataPart1, footerDataPart2, footerTextData } from "./data/footerDataS";
 import DetailProductFunc from "./components/DetailProductFuncSections";
+import DetailReviewSection from "./components/DetailReviewSection";
 
 
 
@@ -45,15 +46,29 @@ function DetailPage(props) {
         return (
             <div className="card d-card">
                 <img className="d-onecard-image" src={data.pic} />
-                <div className="card-body d-body">
-                    <button className='d-flex button-container'>
-                        <div className='my-auto mx-2'>Add to cart</div>
+                <div className="d-body d-flex">
+                    <button className='d-flex d-button-container'>
+                        <div className='my-auto'>Add to cart</div>
                         <div className="button-circle"><i class="bi bi-cart3"></i></div>
                     </button>
+                    <button className="btn-eye">
+                    <i class="bi bi-eye"></i>
+                        </button>
                 </div>
             </div>
         )
     })
+
+    const detailReviewSection = reviewData.map((data)=>{
+        return <DetailReviewSection 
+        title={data.title}
+        text={data.text}
+        btn={data.btn}
+        />
+
+    })
+
+
 
     
 
@@ -115,9 +130,16 @@ function DetailPage(props) {
                 <div>
                     {mainSect}
                 </div>
-                <div className="d-flex container">
-                    {oneProductSect }
+                <div className="container">
+                    {detailReviewSection}
+                </div>
+
+                <div className="container my-5">
+                    <h2 className="d-related-text">Related product</h2>
+                    <div className="d-flex">
+                    {oneProductSect}
                     {productSect}
+                    </div>
                 </div>
 
                 <div className='footer-container'>

@@ -1,25 +1,25 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { genreData, header, PopularProductsData, sectionProduct } from './data/Seed';
-import ProductFunc from './components/ProductFuncSection';
-import MainMenu from './components/MainMenuSection';
+import { genreData, header, PopularProductsData, sectionProduct } from './data/SeedData';
+import ProductFunc from './components/ProductFuncSections';
+import MainMenu from './components/MainMenuSections';
 import AliceCarousel from "react-alice-carousel"
-import carouselData from './data/carousel';
-import SecondSliderProduct from './data/secondcarousel';
-import { product, twoProduct } from './data/thirdsection';
-import { OneProduct, Twoproduct } from "./components/TwoProductsSection"
-import { fourthsection, logos } from './data/fourthsection';
-import {Popularproducts,  GenreFunc } from './components/PopularProducts';
-import Peopleprofile from './data/peopleprofile';
-import PeopleProfile from './components/PeopleProfile';
-import NewsSec from './components/NewsSection';
-import newsSlider from './data/newsslider';
-import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerdata';
-import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/FooterSection';
-import LogosFunc from './components/LogoSection';
-import FourthFunc from './components/Fourthsection';
-import SectionProFunc from './components/SectionProduct';
+import carouselData from './data/carouselData';
+import SecondSliderProduct from './data/secondcarouselData';
+import { product, twoProduct } from './data/thirdsectionData';
+import { OneProduct, Twoproduct } from "./components/TwoProductsSections"
+import { fourthsection, logos } from './data/fourthsectionData';
+import {Popularproducts,  GenreFunc } from './components/PopularProductS';
+import Peopleprofile from './data/peopleprofileData';
+import PeopleProfile from './components/PeopleProfileSectionS';
+import NewsSec from './components/NewsSections';
+import newsSlider from './data/newssliderData';
+import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerData';
+import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/FooterSections';
+import LogosFunc from './components/LogoSections';
+import FourthFunc from './components/FourthSectionS';
+import SectionProFunc from './components/SectionProducts';
 
 
 function App() {

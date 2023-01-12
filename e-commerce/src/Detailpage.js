@@ -1,12 +1,12 @@
-import ProductFunc from "./components/ProductFuncSection"
-import MainMenu from "./components/MainMenuSection"
+import ProductFunc from "./components/ProductFuncSections"
+import MainMenu from "./components/MainMenuSections"
 import { Modal, ModalBody } from "react-bootstrap";
-import { header } from "./data/Seed";
-import { MainSectData, oneProductData, productData } from "./data/detaildata";
-import DetailMainSection from "./components/DetailMainSection";
-import { FooterMainSect, FooterAboutFunc1 , FooterAboutFunc2} from "./components/FooterSection";
-import { footerDataPart1, footerDataPart2, footerTextData } from "./data/footerdata";
-import DetailProductFunc from "./components/DetailProductFunc";
+import { header } from "./data/SeedData";
+import { MainSectData, oneProductData, productData } from "./data/detailData";
+import DetailMainSection from "./components/DetailMainSections";
+import { FooterMainSect, FooterAboutFunc1 , FooterAboutFunc2} from "./components/FooterSections";
+import { footerDataPart1, footerDataPart2, footerTextData } from "./data/footerData";
+import DetailProductFunc from "./components/DetailProductFuncSections";
 
 
 

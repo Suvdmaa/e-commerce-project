@@ -195,7 +195,7 @@
   border-radius: 20px;
 }
 
-.card-title{
+.onecard-title{
   color: #2E8FC5;
   font-size: 41px;
   font-weight: 700;
@@ -203,7 +203,7 @@
   margin-top: 30px;
 }
 
-.card-text{
+.onecard-text{
   color: white;
   font-size: 18px;
   margin-bottom: 30px;
@@ -477,4 +477,66 @@
   position: absolute;
   right: 40px;
   top: 55px;
+}
+
+
+/*-------------------------Detail Page -----------------------*/
+.dmain-title{
+  color: #003F62;
+}
+
+.mainfaint-text{
+  color: #5D5D5D;
+
+}
+
+.d-btn{
+  padding: 15px 25px;
+  background: #EDA415;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  margin: 20px 20px 15px 0;
+  width: 200px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.d-heart{
+  font-size: 25px;
+  padding: 15px 18px;
+  background: #EEEEEE;
+  border-radius: 80px;
+}
+
+.d-size{
+  display: flex;
+  background-color: #EEEEEE;
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+
+.d-category{
+  color: #434343;
+  padding: 0 10px;
+}
+
+.d-logo{
+  margin-top: -10px;
+  padding: 0 15px;
+}
+
+.d-card{
+  width: 300px;
+  margin: 15px;
+}
+
+.dcard-image{
+  height: 200px;
+  padding: 20px;
+}
+
+.d-onecard-image{
+  height: 200px;
+  padding: 20px 45px;
 }

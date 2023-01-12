@@ -42,8 +42,6 @@ function Popularproducts(props) {
   const [show, setShow] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
 
-
-
   function handleUpVote(props) {
     console.log('upvoted')
     console.log(props.title)
@@ -66,7 +64,7 @@ function Popularproducts(props) {
         </Card.Body><DetailPage
           show={show}
           fullscreen={fullscreen}
-          setShow = {setShow} />
+          setShow ={setShow} />
       </Card>
     </div>
   )

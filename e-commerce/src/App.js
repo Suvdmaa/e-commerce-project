@@ -8,7 +8,7 @@ import AliceCarousel from "react-alice-carousel"
 import carouselData from './data/carousel';
 import SecondSliderProduct from './data/secondcarousel';
 import { product, twoProduct } from './data/thirdsection';
-import { OneProduct, Twoproduct } from "./components/Thirdsection"
+import { OneProduct, Twoproduct } from "./components/TwoProductsSection"
 import { fourthsection, logos } from './data/fourthsection';
 import {Popularproducts,  GenreFunc } from './components/PopularProducts';
 import Peopleprofile from './data/peopleprofile';

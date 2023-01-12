@@ -48,7 +48,10 @@ export default function DetailMainSection(props) {
                 </div>
                 <hr></hr>
                 <div>
-                    <p className="my-4"><span className="fw-bold">Color:</span> </p>
+                    <p className="my-4"><span className="fw-bold">Color:</span>
+                      <button className="d-colorbtn"></button>
+                      <button className="d-colorbtn"></button>
+                    </p>
                     <p className="d-flex align-items-center my-4"><span className="fw-bold">Size:</span>{sizes}</p>
                     <p className="my-4"><span className="fw-bold">Quantity:</span></p>
                     <div>

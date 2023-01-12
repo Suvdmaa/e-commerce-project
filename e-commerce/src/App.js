@@ -15,7 +15,7 @@ import Peopleprofile from './data/peopleprofileData';
 import PeopleProfile from './components/PeopleProfileSectionS';
 import NewsSec from './components/NewsSections';
 import newsSlider from './data/newssliderData';
-import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerData';
+import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerDataS';
 import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/FooterSections';
 import LogosFunc from './components/LogoSections';
 import FourthFunc from './components/FourthSectionS';

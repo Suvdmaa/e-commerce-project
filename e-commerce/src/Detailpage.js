@@ -5,7 +5,7 @@ import { header } from "./data/SeedData";
 import { MainSectData, oneProductData, productData } from "./data/detailData";
 import DetailMainSection from "./components/DetailMainSections";
 import { FooterMainSect, FooterAboutFunc1 , FooterAboutFunc2} from "./components/FooterSections";
-import { footerDataPart1, footerDataPart2, footerTextData } from "./data/footerData";
+import { footerDataPart1, footerDataPart2, footerTextData } from "./data/footerDataS";
 import DetailProductFunc from "./components/DetailProductFuncSections";
 
 

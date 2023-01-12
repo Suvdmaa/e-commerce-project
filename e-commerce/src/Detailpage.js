@@ -4,7 +4,7 @@ import { Modal, ModalBody } from "react-bootstrap";
 import { header } from "./data/Seed";
 import { MainSectData, oneProductData, productData } from "./data/detaildata";
 import DetailMainSection from "./components/DetailMainSection";
-import { FooterMainSect, FooterAboutFunc1 , FooterAboutFunc2} from "./components/Footer";
+import { FooterMainSect, FooterAboutFunc1 , FooterAboutFunc2} from "./components/FooterSection";
 import { footerDataPart1, footerDataPart2, footerTextData } from "./data/footerdata";
 import DetailProductFunc from "./components/DetailProductFunc";
 

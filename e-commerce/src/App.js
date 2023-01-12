@@ -10,7 +10,7 @@ import SecondSliderProduct from './data/secondcarouselData';
 import { product, twoProduct } from './data/thirdsectionData';
 import { OneProduct, Twoproduct } from "./components/TwoProductsSections"
 import { fourthsection, logos } from './data/fourthsectionData';
-import {Popularproducts,  GenreFunc } from './components/PopularProductS';
+import {Popularproducts,  GenreFunc } from './components/PopularProductSection';
 import Peopleprofile from './data/peopleprofileData';
 import PeopleProfile from './components/PeopleProfileSectionS';
 import NewsSec from './components/NewsSections';

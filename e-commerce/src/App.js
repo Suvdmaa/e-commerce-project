@@ -12,13 +12,13 @@ import { OneProduct, Twoproduct } from "./components/TwoProductsSections"
 import { fourthsection, logos } from './data/fourthsectionData';
 import {Popularproducts,  GenreFunc } from './components/PopularProductSection';
 import Peopleprofile from './data/peopleprofileData';
-import PeopleProfile from './components/PeopleProfileSectionS';
+import PeopleProfile from './components/PeopleProfileSections';
 import NewsSec from './components/NewsSections';
 import newsSlider from './data/newssliderData';
 import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerDataS';
 import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/FooterSections';
 import LogosFunc from './components/LogoSections';
-import FourthFunc from './components/FourthSectionS';
+import FourthFunc from './components/FourthSections';
 import SectionProFunc from './components/SectionProducts';
 
 

@@ -2,7 +2,9 @@ import Card from 'react-bootstrap/Card';
 import { PopularProductsData } from '../data/SeedData';
 import { Rating } from "react-simple-star-rating"
 import { useState } from 'react';
-import DetailPage from '../DetailPage';
+import DetailPage from '../Detailpage';
+
+
 
 function GenreFunc(props) {
   return (
@@ -61,7 +63,8 @@ function Popularproducts(props) {
               <a onClick={() => { handleUpVote(props)}} className="cart"><i class="bi bi-cart3"></i></a>
             </div>
           </div>
-        </Card.Body><DetailPage
+        </Card.Body>
+        <DetailPage
           show={show}
           fullscreen={fullscreen}
           setShow ={setShow} />

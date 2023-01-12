@@ -2,7 +2,7 @@ import ProductFunc from "./components/ProductFuncSections"
 import MainMenu from "./components/MainMenuSections"
 import { Modal, ModalBody } from "react-bootstrap";
 import { header } from "./data/SeedData";
-import { MainSectData, oneProductData, productData } from "./data/detailData";
+import { MainSectData, oneProductData, productData } from "./data/detaildata";
 import DetailMainSection from "./components/DetailMainSections";
 import { FooterMainSect, FooterAboutFunc1 , FooterAboutFunc2} from "./components/FooterSections";
 import { footerDataPart1, footerDataPart2, footerTextData } from "./data/footerDataS";
@@ -11,8 +11,6 @@ import DetailProductFunc from "./components/DetailProductFuncSections";
 
 
 function DetailPage(props) {
-
-
     const HeaderSect = header.map((header) => {
         return <ProductFunc
             text={header.text}

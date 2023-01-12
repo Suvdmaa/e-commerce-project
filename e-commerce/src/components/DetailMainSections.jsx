@@ -1,5 +1,5 @@
 import { Rating } from "react-simple-star-rating"
-import { categoryData, logoData, sizeData } from "../data/detailData"
+import { categoryData, logoData, sizeData } from "../data/detaildata"
 
 
 

@@ -1,5 +1,5 @@
-import ProductFunc from "./components/ProductFunc"
-import MainMenu from "./components/MainMenu"
+import ProductFunc from "./components/ProductFuncSection"
+import MainMenu from "./components/MainMenuSection"
 import { Modal, ModalBody } from "react-bootstrap";
 import { header } from "./data/Seed";
 import { MainSectData, oneProductData, productData } from "./data/detaildata";

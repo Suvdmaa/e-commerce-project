@@ -2,8 +2,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { genreData, header, PopularProductsData, sectionProduct } from './data/Seed';
-import ProductFunc from './components/ProductFunc';
-import MainMenu from './components/MainMenu';
+import ProductFunc from './components/ProductFuncSection';
+import MainMenu from './components/MainMenuSection';
 import AliceCarousel from "react-alice-carousel"
 import carouselData from './data/carousel';
 import SecondSliderProduct from './data/secondcarousel';
@@ -17,7 +17,7 @@ import NewsSec from './components/NewsSection';
 import newsSlider from './data/newsslider';
 import { footerDataPart1, footerDataPart2, footerTextData } from './data/footerdata';
 import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components/FooterSection';
-import LogosFunc from './components/Logos';
+import LogosFunc from './components/LogoSection';
 import FourthFunc from './components/Fourthsection';
 import SectionProFunc from './components/SectionProduct';
 

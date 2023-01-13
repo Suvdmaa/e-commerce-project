@@ -1,9 +1,13 @@
 // import Card from 'react-bootstrap/Card';
 // import ReactStars from "react-rating-stars-component";
+import { useState } from "react";
 
 
 
 function ProductFunc(props) {
+
+  const [toggle, setToggle] = useState(false)
+
   return (
     <div>
       <header>
@@ -27,7 +31,17 @@ function ProductFunc(props) {
             <button class="button text-white rounded-4">Search</button>
           </div>
           <p className="p-3"><i class="bi bi-person px-2"></i>Sign in</p>
-          <p className="p-3"><i class="bi bi-heart px-2" ></i><span className="color-circle p-1 px-2 rounded-circle">0</span></p>
+          
+          <p className="p-3"><a onClick={() =>{
+          setToggle(!toggle)
+          }}>
+            <i class="bi bi-heart px-2" ></i>
+            <span className="color-circle p-1 px-2 rounded-circle">
+              {props.wishlist}
+              {toggle ? <div className="d-none"></div> : <div className="shocart">{props.cart}</div>}
+              </span>
+          </a></p>
+
           <p className="p-3"><i class="bi bi-cart3 px-2"></i><span className="color-circle p-1 px-2 rounded-circle">0</span></p>
 
         </div>

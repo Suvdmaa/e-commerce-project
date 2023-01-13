@@ -2,6 +2,8 @@
   font-family: 'Poppins';
 }
 
+
+
 /*  Header -------------*/
 .second-header {
   background: #003F62;
@@ -535,6 +537,8 @@
 .d-card {
   width: 300px;
   margin: 15px;
+  border: 1px solid var(--bs-border-color-translucent);
+  border-radius: 20px;
 }
 
 .dcard-image {
@@ -544,20 +548,35 @@
 
 .d-onecard-image {
   height: 200px;
-  padding: 20px 45px;
+  padding: 20px 60px;
 }
 
 .d-body{
-  padding: 10px;
-  margin-top: 30px;
+  padding: 5px 20px;
 }
 
+.d-card .star-svg{
+  width: 25px;
+  margin-top: -10px;
+}
+
+.d-card-title{
+  color: #003F62;
+  font-size: 17.0939px;
+  line-height: 26px;
+}
 
 .d-circlebtn {
   width: 20px;
   height: 20px;
   border-radius: 20px;
   margin: 0 10px;
+}
+
+.d-card-text{
+  font-weight: 600;
+  font-size: 17.09px;
+  line-height: 25.64px;
 }
 
 .d-colorbtn {
@@ -573,9 +592,10 @@
 }
 
 .d-containerbtn {
-  width: 130px;
+  width: 187px;
   border-radius: 20px;
   margin: 10px;
+  font-size: 20px;
 }
 
 .btn-color1 {
@@ -632,3 +652,21 @@
   font-weight: 600;
 }
 
+<<<<<<< HEAD
+=======
+.d-product-section{
+  margin: 20px 0 80px 0;
+}
+
+.shocart{
+  background-color: black;
+  position: absolute;
+  top: 170px;
+  right: 200px;
+  height: 300px;
+  width: 400px;
+  z-index: 1;
+  border-radius: 1px solid  var(--bs-border-color-translucent);
+
+}
+>>>>>>> 16dfd15c73572f11c88a3bed7c96d473918f9a06

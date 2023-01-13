@@ -20,9 +20,13 @@ import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from './components
 import LogosFunc from './components/LogoSections';
 import FourthFunc from './components/FourthSections';
 import SectionProFunc from './components/SectionProducts';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [wishlist, setWishList] = useState(0)
+  const [cart, setCart] = useState([])
   // Header Section
   const HeaderSect = header.map((header) => {
     return <ProductFunc
@@ -31,7 +35,10 @@ function App() {
       order={header.order}
       url={header.url}
       votes={header.votes}
-      logoUrl={header.logoUrl} />
+      logoUrl={header.logoUrl}
+      wishlist={wishlist} 
+      cart={cart}
+      setCart={setCart}/>
   })
 
   // Main Slider section
@@ -84,7 +91,7 @@ function App() {
   // Popular Product
 
   const popularProducts = PopularProductsData.map((data) => {
-    console.log(data)
+    // console.log(data)
     const result = data.products.map(product => {
       return <Popularproducts
         title={product.title}
@@ -93,6 +100,10 @@ function App() {
         picUrl={product.picUrl}
         id={product.id}
         stars={product.stars}
+        setWishList={setWishList}
+        wishlist={wishlist}
+        cart={cart}
+        setCart={setCart}
       />
     })
     return (
@@ -102,6 +113,7 @@ function App() {
     )
   }
   )
+
 
   // One pic Section - Second Section
   const SectionProduct = sectionProduct.map((product) => {

@@ -34,6 +34,16 @@ function DetailPage(props) {
         />
     })
 
+
+    const detailReviewSection = reviewData.map((data)=>{
+        return <DetailReviewSection 
+        title={data.title}
+        text={data.text}
+        btn={data.btn}
+        />
+
+    })
+
     const productSect = productData.map((data)=>{
         return <DetailProductFunc 
         title={data.title}
@@ -44,7 +54,7 @@ function DetailPage(props) {
 
     const oneProductSect = oneProductData.map((data) => {
         return (
-            <div className="card d-card">
+            <div className="d-card">
                 <img className="d-onecard-image" src={data.pic} />
                 <div className="d-body d-flex">
                     <button className='d-flex d-button-container'>
@@ -59,23 +69,7 @@ function DetailPage(props) {
         )
     })
 
-    const detailReviewSection = reviewData.map((data)=>{
-        return <DetailReviewSection 
-        title={data.title}
-        text={data.text}
-        btn={data.btn}
-        />
-
-    })
-
-
-
-    
-
-    
-
-
-
+   
 
 
     // Footer
@@ -134,7 +128,7 @@ function DetailPage(props) {
                     {detailReviewSection}
                 </div>
 
-                <div className="container my-5">
+                <div className="container d-product-section">
                     <h2 className="d-related-text">Related product</h2>
                     <div className="d-flex">
                     {oneProductSect}

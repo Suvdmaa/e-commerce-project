@@ -6,13 +6,13 @@ export default function DetailProductFunc(props) {
     // const mainProductFunc =  
     return (
         <div>
-            <div className="card d-card">
+            <div className="d-card">
                 <img className="dcard-image" src={props.pic}></img>
                 <div className="d-body">
-                    <h5 className="card-title">
+                    <h5 className="d-card-title">
                         {props.title}
                     </h5>
-                    <p className="card-text">{props.price}</p>
+                    <p className="d-card-text">{props.price}</p>
                     <Rating></Rating>
                 </div>
             </div>

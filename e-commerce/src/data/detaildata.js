@@ -66,7 +66,7 @@ const productData = [
     },
     {
         title: 'Tablet as a laptop',
-        pic: 'images/Frame.png',
+        pic: 'images/Frame29.png',
         price: '$11,70',
     },
 

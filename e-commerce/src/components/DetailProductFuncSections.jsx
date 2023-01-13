@@ -9,10 +9,10 @@ export default function DetailProductFunc(props) {
             <div className="card d-card">
                 <img className="dcard-image" src={props.pic}></img>
                 <div className="d-body">
-                    <h5 className="card-title">
+                    <h5 className="detail-title">
                         {props.title}
                     </h5>
-                    <p className="card-text">{props.price}</p>
+                    <p className="detail-text">{props.price}</p>
                     <Rating></Rating>
                 </div>
             </div>

@@ -45,7 +45,8 @@ function Popularproducts(props) {
   const [show, setShow] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
   const [toggle, setToggle] = useState(false)
-  const [card, setCard] = useState([])
+  
+ 
 
   function handleUpVote(props) {
     console.log('upvoted')
@@ -56,14 +57,15 @@ function Popularproducts(props) {
     console.log("event", event)
     props.setWishList(props.wishlist + 1)
 
-    if(props.position == event){
+    if(props.id == event){
       console.log("product", props)
-      // props.setCart(props.cart + props)
-      // console.log(props.cart)
-      // setCard(card + props)
-      // console.log(setCard)
+
+      props.cart.push(props)
     }
-    // console.log("product", props)
+
+    
+     props.setCart(props.cart)
+
   }
   
   return (
@@ -73,7 +75,7 @@ function Popularproducts(props) {
         <div >
           <button className="btn-heart" onClick={() => 
             {setToggle(!toggle)
-              handleClickHeart(props.position)
+              handleClickHeart(props.id)
             }}>{toggle ? <i class="fa-solid fa-heart"></i> : <i class="fa-regular fa-heart"></i>} </button>
         </div>
                   {/* {console.log('props', props)} */}

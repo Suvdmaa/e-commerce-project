@@ -27,6 +27,11 @@ function App() {
 
   const [wishlist, setWishList] = useState(0)
   const [cart, setCart] = useState([])
+
+
+
+
+
   // Header Section
   const HeaderSect = header.map((header) => {
     return <ProductFunc
@@ -38,7 +43,8 @@ function App() {
       logoUrl={header.logoUrl}
       wishlist={wishlist} 
       cart={cart}
-      setCart={setCart}/>
+      setCart={setCart}
+      />
   })
 
   // Main Slider section
@@ -54,7 +60,7 @@ function App() {
           </div>
         </div>
         <div className="img-container">
-          <img src={data.name} className={data.style} class="carousel-img"></img>
+          <img src={data.name} className={data.style} class="carousel-img" alt="product"></img>
           <div className="circle-price">only {data.price}</div>
         </div>
       </div>
@@ -71,7 +77,7 @@ function App() {
   const items = SecondSliderProduct.map((product) => {
     return (
       <div className="slider-container">
-        <img className="sliderPic" src={product.picUrl}></img>
+        <img className="sliderPic" src={product.picUrl} alt="product"></img>
         <div className="mx-3 me-3 slidertext-color">
           <h4>
             {product.title}

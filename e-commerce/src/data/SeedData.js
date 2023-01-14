@@ -106,7 +106,7 @@ const PopularProductsData = [
         products: [
             {
                 title: "Camera",
-                position: 1,
+                position: 9,
                 price: "$11,70",
                 picUrl: "images/camera.png",
                 rating: "2,3",
@@ -116,7 +116,7 @@ const PopularProductsData = [
             },
             {
                 title: "Wireless headphones",
-                position: 2,
+                position: 10,
                 price: "$11,70",
                 picUrl: "images/Frame.png",
                 id: '2',
@@ -125,7 +125,7 @@ const PopularProductsData = [
             },
             {
                 title: "Wireless headphones",
-                position: 3,
+                position: 11,
                 price: "$11,70",
                 picUrl: "images/ear-12.webp",
                 id: '3',
@@ -134,7 +134,7 @@ const PopularProductsData = [
             },
             {
                 title: "Play game",
-                position: 4,
+                position: 12,
                 price: "$11,70",
                 picUrl: "images/Frame1.png",
                 id: generateIdCount(),
@@ -143,7 +143,7 @@ const PopularProductsData = [
             },
             {
                 title: "Play game",
-                position: 5,
+                position: 13,
                 price: "$11,70",
                 picUrl: "images/Frame1.png",
                 id: generateIdCount(),
@@ -152,7 +152,7 @@ const PopularProductsData = [
             },
             {
                 title: "Tablet as a laptop",
-                position: 6,
+                position: 14,
                 price: "$11,70",
                 picUrl: "images/Frame29.png",
                 id: generateIdCount(),
@@ -161,7 +161,7 @@ const PopularProductsData = [
             },
             {
                 title: "Play game",
-                position: 7,
+                position: 15,
                 price: "$11,70",
                 picUrl: "images/Frame1.png",
                 id: generateIdCount(),
@@ -170,7 +170,7 @@ const PopularProductsData = [
             },
             {
                 title: "Tablet as a laptop",
-                position: 8,
+                position: 16,
                 price: "$11,70",
                 picUrl: "images/Frame29.png",
                 id: generateIdCount(),
@@ -184,7 +184,7 @@ const PopularProductsData = [
         products: [
             {
                 title: "Camera",
-                position: 1,
+                position: 17,
                 price: "$11,70",
                 picUrl: "images/camera.png",
                 rating: "2,3",
@@ -194,7 +194,7 @@ const PopularProductsData = [
             },
             {
                 title: "Wireless headphones",
-                position: 2,
+                position: 18,
                 price: "$11,70",
                 picUrl: "images/Frame.png",
                 id: generateIdCount(),
@@ -203,7 +203,7 @@ const PopularProductsData = [
             },
             {
                 title: "Wireless headphones",
-                position: 3,
+                position: 19,
                 price: "$11,70",
                 picUrl: "images/ear-12.webp",
                 id: generateIdCount(),
@@ -212,7 +212,7 @@ const PopularProductsData = [
             },
             {
                 title: "Play game",
-                position: 4,
+                position: 20,
                 price: "$11,70",
                 picUrl: "images/Frame1.png",
                 id: generateIdCount(),
@@ -221,7 +221,7 @@ const PopularProductsData = [
             },
             {
                 title: "Play game",
-                position: 5,
+                position: 21,
                 price: "$11,70",
                 picUrl: "images/xbox.jpeg",
                 id: generateIdCount(),
@@ -230,7 +230,7 @@ const PopularProductsData = [
             },
             {
                 title: "Tablet as a laptop",
-                position: 6,
+                position: 22,
                 price: "$11,70",
                 picUrl: "images/Frame29.png",
                 id: generateIdCount(),
@@ -239,7 +239,7 @@ const PopularProductsData = [
             },
             {
                 title: "Play game",
-                position: 7,
+                position: 23,
                 price: "$11,70",
                 picUrl: "images/x-box-1.jpeg",
                 id: generateIdCount(),
@@ -248,7 +248,7 @@ const PopularProductsData = [
             },
             {
                 title: "Tablet as a laptop",
-                position: 8,
+                position: 24,
                 price: "$11,70",
                 picUrl: "images/laptop1.png",
                 id: generateIdCount(),

@@ -5,7 +5,6 @@ import Cart from "./Cart";
 // import { Rating } from "react-simple-star-rating";
 
 
-
 function ProductFunc(props) {
 
   const [toggle, setToggle] = useState(false)
@@ -22,7 +21,8 @@ function ProductFunc(props) {
       stars={data.stars}
     />
   })
-  
+
+
   return (
     <div>
       <header>

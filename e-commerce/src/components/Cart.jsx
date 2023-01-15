@@ -1,17 +1,15 @@
 import { Rating } from "react-simple-star-rating";
-// import { useState } from "react";
+import { useState } from "react";
 
 
 
 export default function Cart(props) {
 
-   
-    
+   const [array, setArray] = useState([props])
+    console.log(array)
 
     function deleteItem (event){
-    
-        console.log(props.cart)
-    //    setArray(array.filter(item => item.id !== event))
+       setArray(array.filter(item => item.id !== event))
     }
 
     return (

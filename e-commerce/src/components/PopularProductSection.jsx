@@ -59,12 +59,9 @@ function Popularproducts(props) {
 
     if(props.id == event){
       console.log("product", props)
-
       props.cart.push(props)
     }
-
-    
-     props.setCart(props.cart)
+    props.setCart(props.cart)
 
   }
   

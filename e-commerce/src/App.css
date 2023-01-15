@@ -683,13 +683,33 @@
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  position: relative;
 }
 
 .cart-pic{
-  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 100px;
+  padding: 10px;
 }
 
 .cartContainer .star-svg{
   width: 20px;
   margin-top: -10px;
+}
+
+.cartContainer h5{
+  width: 100px;
+}
+
+.cart-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: white;
+  color: red;
+  font-size: 25px;
 }

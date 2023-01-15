@@ -2,25 +2,27 @@
 // import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
 import Cart from "./Cart";
+// import { Rating } from "react-simple-star-rating";
 
 
 
 function ProductFunc(props) {
 
   const [toggle, setToggle] = useState(false)
-  console.log(props.cart)
+  // console.log(props.cart)
 
-  const products = props.cart.map((data) =>{
-    return <Cart 
-    title={data.title}
-        position={data.position}
-        price={data.price}
-        picUrl={data.picUrl}
-        id={data.id}
-        stars={data.stars}
+
+  const products = props.cart.map((data) => {
+    return <Cart
+      title={data.title}
+      position={data.position}
+      price={data.price}
+      picUrl={data.picUrl}
+      id={data.id}
+      stars={data.stars}
     />
   })
-
+  
   return (
     <div>
       <header>
@@ -59,6 +61,7 @@ function ProductFunc(props) {
               </span>
             </a></p>
 
+
             <p className="p-3"><i class="bi bi-cart3 px-2"></i><span className="color-circle p-1 px-2 rounded-circle">0</span></p>
 
           </div>
@@ -68,7 +71,6 @@ function ProductFunc(props) {
     </div>
   );
 }
-
 
 
 export default ProductFunc;

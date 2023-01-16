@@ -721,3 +721,41 @@
   padding: 0px;
 }
 
+
+/* ------------------------Sign Up Page----------------------------------*/
+.sign-container{
+  margin: 100px 600px;
+  width: 400px;
+}
+
+.sign-container h1{
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.sign-container input{
+  width: 360px;
+  padding: 10px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  border: 1px solid var(--bs-border-color-translucent);
+}
+
+.sign-container button{
+  width: 360px;
+  padding: 10px 50px;
+  background: #7F56D9;
+  border-radius: 8px;
+  color: white;
+}
+
+.link-color{
+  color: #6941C6;
+  text-decoration: none;
+}
+
+.sign-container p{
+  color: #667085;
+}
+

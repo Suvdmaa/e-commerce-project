@@ -1,8 +1,11 @@
 // import Card from 'react-bootstrap/Card';
 // import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
+import { Dropdown } from "react-bootstrap";
 import Cart from "./Cart";
 // import { Rating } from "react-simple-star-rating";
+import { Link } from "react-router-dom";
+
 
 
 function ProductFunc(props) {
@@ -45,9 +48,13 @@ function ProductFunc(props) {
               <input type="search" placeholder="Search any things" className="p-3 w-50 rounded-4"></input>
               <button class="button text-white rounded-4">Search</button>
             </div>
-            <p className="p-3"><i class="bi bi-person px-2"></i>Sign in</p>
+           
+            <Link to={"/sign"}><p className="p-3"><i class="bi bi-person px-2"></i>Sign in</p></Link>
+          
 
-            <p className="p-3"><a onClick={() => {
+           
+
+            {/* <p className="p-3"><a onClick={() => {
               setToggle(!toggle)
             }}>
               <i class="bi bi-heart px-2" ></i>
@@ -59,15 +66,33 @@ function ProductFunc(props) {
                   {products}
                   </div>}
               </span>
-            </a></p>
+            </a></p> */}
+            <p className="p-3">
+              <Dropdown className="dropdown-btn">
+                <Dropdown.Toggle>
+                 <i class="bi bi-heart px-2" ></i>
+                 <span className="color-circle p-1 px-2 rounded-circle">
+                {props.wishlist}
+                </span>
+                </Dropdown.Toggle>
+                <Dropdown.Menu className="wishlistcart">
+               
+                   <h2 className="text-center">WishList</h2>
+                  {products}
+                 
+                </Dropdown.Menu>
+
+              </Dropdown>
+            </p>
 
 
             <p className="p-3"><i class="bi bi-cart3 px-2"></i><span className="color-circle p-1 px-2 rounded-circle">0</span></p>
-
+            
           </div>
 
         </div>
       </header>
+      
     </div>
   );
 }

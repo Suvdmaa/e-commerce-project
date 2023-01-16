@@ -667,14 +667,15 @@
 .wishlistcart{
   background-color: white;
   color: black;
-  position: absolute;
+  /* position: absolute;
   width: 400px;
-  top: 100px;
+  top: 100px; */
   right: 50px;
   z-index: 1;
   border: 1px solid black;
   border-radius: 5px;
   padding: 20px;
+  width: 400px;
 }
 
 .cartContainer{
@@ -713,3 +714,10 @@
   color: red;
   font-size: 25px;
 }
+
+.dropdown-btn .btn-primary{
+  background: #003F62;
+  border: none;
+  padding: 0px;
+}
+

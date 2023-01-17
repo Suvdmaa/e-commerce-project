@@ -1,47 +1,47 @@
-import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { genreData, header, PopularProductsData, sectionProduct } from '../data/SeedData';
-import ProductFunc from '../components/ProductFuncSections';
-import MainMenu from '../components/MainMenuSections';
+import { genreData, header, PopularProductsData, sectionProduct } from '../../data/SeedData';
+import ProductFunc from '../header/ProductFuncSections';
+import MainMenu from '../header/MainMenuSections';
 import AliceCarousel from "react-alice-carousel"
-import carouselData from '../data/carouselData';
-import SecondSliderProduct from '../data/secondcarouselData';
-import { product, twoProduct } from '../data/thirdsectionData';
-import { OneProduct, Twoproduct } from "../components/TwoProductsSections"
-import { fourthsection, logos } from '../data/fourthsectionData';
-import {Popularproducts,  GenreFunc } from '../components/PopularProductSection';
-import Peopleprofile from '../data/peopleprofileData';
-import PeopleProfile from '../components/PeopleProfileSections';
-import NewsSec from '../components/NewsSections';
-import newsSlider from '../data/newssliderData';
-import { footerDataPart1, footerDataPart2, footerTextData } from '../data/footerDataS';
-import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from '../components/FooterSections';
-import LogosFunc from '../components/LogoSections';
-import FourthFunc from '../components/FourthSections';
-import SectionProFunc from '../components/SectionProducts';
+import carouselData from '../../data/carouselData';
+import SecondSliderProduct from '../../data/secondcarouselData';
+import { product, twoProduct } from '../../data/thirdsectionData';
+import { OneProduct, Twoproduct } from "../productsection/TwoProductsSections"
+import { fourthsection, logos } from '../../data/fourthsectionData';
+import {Popularproducts,  GenreFunc } from '../carouselsection/PopularProductSection';
+import Peopleprofile from '../../data/peopleprofileData';
+import PeopleProfile from '../carouselsection/PeopleProfileSections';
+import NewsSec from '../carouselsection/NewsSections';
+import newsSlider from '../../data/newssliderData';
+import { footerDataPart1, footerDataPart2, footerTextData } from '../../data/footerDataS';
+import { FooterAboutFunc1, FooterAboutFunc2, FooterMainSect } from '../footer/FooterSections';
+import LogosFunc from '../productsection/LogoSections';
+import FourthFunc from '../productsection/FourthSections';
+import SectionProFunc from '../productsection/SectionProducts';
 import { useState } from 'react';
 
 
-function Home() {
 
-  const [wishlist, setWishList] = useState(0)
-  const [cart, setCart] = useState([])
+function Home(props) {
+
+  // const [wishlist, setWishList] = useState(0)
+  // const [cart, setCart] = useState([])
 
   // Header Section
-  const HeaderSect = header.map((header) => {
-    return <ProductFunc
-      text={header.text}
-      description={header.description}
-      order={header.order}
-      url={header.url}
-      votes={header.votes}
-      logoUrl={header.logoUrl}
-      wishlist={wishlist} 
-      cart={cart}
-      setCart={setCart}
-      />
-  })
+  // const HeaderSect = header.map((header) => {
+  //   return <ProductFunc
+  //     text={header.text}
+  //     description={header.description}
+  //     order={header.order}
+  //     url={header.url}
+  //     votes={header.votes}
+  //     logoUrl={header.logoUrl}
+  //     wishlist={wishlist} 
+  //     cart={cart}
+  //     setCart={setCart}
+  //     />
+  // })
 
   // Main Slider section
 
@@ -102,10 +102,10 @@ function Home() {
         picUrl={product.picUrl}
         id={product.id}
         stars={product.stars}
-        setWishList={setWishList}
-        wishlist={wishlist}
-        cart={cart}
-        setCart={setCart}
+        setWishList={props.setWishList}
+        wishlist={props.wishlist}
+        cart={props.cart}
+        setCart={props.setCart}
       />
     })
     return (
@@ -219,14 +219,6 @@ function Home() {
  
   return (
     <div className="App ">
-      <div>
-        <header className="App-header col-md">
-          {HeaderSect}
-        </header>
-        <div className="menu-container bg-light">
-          <MainMenu />
-        </div>
-      </div>
       <div className="Slider container">
         <AliceCarousel autoPlayInterval="3000">
           {images}

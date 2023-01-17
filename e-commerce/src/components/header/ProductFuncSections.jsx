@@ -22,6 +22,8 @@ function ProductFunc(props) {
       picUrl={data.picUrl}
       id={data.id}
       stars={data.stars}
+      cart={props.cart}
+      setCart={props.setCart}
     />
   })
 
@@ -51,28 +53,12 @@ function ProductFunc(props) {
            
             <Link to={"/sign"}><p className="p-3"><i class="bi bi-person px-2"></i>Sign in</p></Link>
           
-
-           
-
-            {/* <p className="p-3"><a onClick={() => {
-              setToggle(!toggle)
-            }}>
-              <i class="bi bi-heart px-2" ></i>
-              <span className="color-circle p-1 px-2 rounded-circle">
-                {props.wishlist}
-                {toggle ? <div className="d-none"></div> : 
-                <div className="wishlistcart">
-                   <h2 className="text-center">WishList</h2>
-                  {products}
-                  </div>}
-              </span>
-            </a></p> */}
             <p className="p-3">
               <Dropdown className="dropdown-btn">
                 <Dropdown.Toggle>
                  <i class="bi bi-heart px-2" ></i>
                  <span className="color-circle p-1 px-2 rounded-circle">
-                {props.wishlist}
+                {props.cart.length}
                 </span>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="wishlistcart">

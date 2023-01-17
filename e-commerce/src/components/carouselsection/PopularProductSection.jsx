@@ -1,8 +1,8 @@
 import Card from 'react-bootstrap/Card';
-import { PopularProductsData } from '../data/SeedData';
+import { PopularProductsData } from '../../data/SeedData';
 import { Rating } from "react-simple-star-rating"
 import { useState } from 'react';
-import DetailPage from '../Detailpage';
+import DetailPage from '../../Detailpage';
 
 
 

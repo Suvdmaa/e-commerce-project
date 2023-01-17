@@ -1,6 +1,6 @@
 import {SubMenu , SecondMenu} from "./SubMenuSections"
 import { Navbar} from 'react-bootstrap'
-import {menus, categories} from "../data/menusData"
+import {menus, categories} from "../../data/menusData"
 
 
 

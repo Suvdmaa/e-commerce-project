@@ -35,7 +35,6 @@ function DetailPage(props) {
         />
     })
 
-
     const detailReviewSection = reviewData.map((data)=>{
         return <DetailReviewSection 
         title={data.title}
@@ -69,9 +68,6 @@ function DetailPage(props) {
             </div>
         )
     })
-
-   
-
 
     // Footer
     const footerMain = footerDataPart1.map((data) => {

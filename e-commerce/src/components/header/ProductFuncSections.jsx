@@ -1,14 +1,8 @@
-// import Card from 'react-bootstrap/Card';
-// import ReactStars from "react-rating-stars-component";
-// import { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import Cart from "./Cart";
-// import { Rating } from "react-simple-star-rating";
 import { Link } from "react-router-dom";
 
 function ProductFunc(props) {
-  // const [toggle, setToggle] = useState(false)
-  // console.log(props.cart)
 
   const products = props.cart.map((data) => {
     return (

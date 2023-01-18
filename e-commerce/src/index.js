@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-alice-carousel/lib/alice-carousel.css";
 import { BrowserRouter } from "react-router-dom"
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

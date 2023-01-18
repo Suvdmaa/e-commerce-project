@@ -1,18 +1,11 @@
 import { Rating } from "react-simple-star-rating"
 
-export default function DetailProductFunc(props) {
-
-
-    // const mainProductFunc =  
+export default function DetailProductFunc(props) { 
     return (
         <div>
-            <div className="d-card">
-                <img className="dcard-image" src={props.pic}></img>
-                <div className="d-body">
-                    <h5 className="detail-title">
-                        {props.title}
-                    </h5>
-                    <p className="detail-text">{props.price}</p>
+            <div className="d-card col">
+                <img className="dcard-image col-md" src={props.pic}></img>
+                <div className="d-body col-md">
                     <h5 className="d-card-title">
                         {props.title}
                     </h5>

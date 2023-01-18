@@ -1,50 +1,21 @@
 import Card from "react-bootstrap/Card";
-import { PopularProductsData } from "../data/SeedData";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
-import DetailPage from "../Detailpage";
+// import DetailPage from "../detailpage/Detailpage";
+import { Link } from "react-router-dom"
+import {toast, ToastContainer} from "react-toastify"
 
 function GenreFunc(props) {
   return (
     <button
       className="btn-click"
-      // onClick={() => {
-      //   clickMe(props);
-      // }}
     >
       {props.name}
     </button>
   );
 }
 
-// function clickMe(props) {
-//   console.log("upvoted");
-
-//   let genrename = props.name;
-
-//   const genreFilter = PopularProductsData.filter((data) => {
-//     const genreData = data.products.filter((product) => {
-//       console.log(product.genre);
-//       if (genrename == product.genre) {
-//         return product;
-//       }
-//     });
-//     if (genreData.length > 0) {
-//       return data;
-//     }
-//   });
-//   console.log("genre", genreFilter);
-//   // const container = document.querySelector("#popularP")
-//   // console.log("container",container )
-//   // container.innerHTML = "";
-
-//   // genreFilter.map((element) => {
-//   //   container.innerHTML += Popularproducts(element)
-//   // })
-// }
-
 function Popularproducts(props) {
-  // console.log(props);
   const [show, setShow] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
   const [toggle, setToggle] = useState(false);
@@ -56,30 +27,45 @@ function Popularproducts(props) {
   }
 
   function handleClickHeart(event) {
-    console.log("event", event);
-    console.log(heart);
-    console.log("werty", props);
-    props.setWishList(props.wishlist + 1);
+    // console.log("event", event);
+    // console.log(heart);
+    // console.log("werty", props);
 
+    // props.setWishList(props.wishlist + 1);
     heart && props.filter((item) => item.id !== event);
+    toast(`You liked ${props.title}.`)
 
-    if (props.id == event) {
-      console.log("product", props);
-      props.cart.push(props);
-    }
-    props.setCart(props.cart);
+    // Add Products to Cart----------------------
+
+    // if (props.id == event) {
+    //   console.log("product", props);
+    //   props.cart.push(props);
+    // }
+    // props.setCart(props.cart);
+
+    props.setCart([
+      ...props.cart, {
+        id: props.id,
+        title: props.title,
+        price: props.price,
+        stars: props.stars,
+        picUrl: props.picUrl,
+      }
+    ])
   }
 
   return (
     <div className="popular-products" id="popularP">
       <Card className="card-style">
-        <Card.Img
-          className="card-image"
-          src={props.picUrl}
-          onClick={() => {
-            setShow(!show);
-          }}
-        />
+        <Link to="/detailpage">
+          <Card.Img
+            className="card-image"
+            src={props.picUrl}
+            onClick={() => {
+              setShow(!show);
+            }}
+          />
+        </Link>
         <div>
           <button
             id={props.id}
@@ -114,8 +100,9 @@ function Popularproducts(props) {
             </div>
           </div>
         </Card.Body>
-        <DetailPage show={show} fullscreen={fullscreen} setShow={setShow} />
+        {/* <DetailPage show={show} fullscreen={fullscreen} setShow={setShow} /> */}
       </Card>
+      <ToastContainer />
     </div>
   );
 }

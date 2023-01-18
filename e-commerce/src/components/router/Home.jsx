@@ -2,19 +2,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import {
   genreData,
-  header,
   PopularProductsData,
   sectionProduct,
 } from "../../data/SeedData";
-import ProductFunc from "../header/ProductFuncSections";
-import MainMenu from "../header/MainMenuSections";
 import AliceCarousel from "react-alice-carousel";
 import carouselData from "../../data/carouselData";
 import SecondSliderProduct from "../../data/secondcarouselData";
 import { product, twoProduct } from "../../data/thirdsectionData";
 import { OneProduct, Twoproduct } from "../productsection/TwoProductsSections";
 import { fourthsection, logos } from "../../data/fourthsectionData";
-import { GenreFunc, Popularproducts } from "../PopularProductSection";
+import { GenreFunc, Popularproducts } from "../carouselsection/PopularProductSection";
 import Peopleprofile from "../../data/peopleprofileData";
 import PeopleProfile from "../carouselsection/PeopleProfileSections";
 import NewsSec from "../carouselsection/NewsSections";
@@ -32,7 +29,6 @@ import {
 import LogosFunc from "../productsection/LogoSections";
 import FourthFunc from "../productsection/FourthSections";
 import SectionProFunc from "../productsection/SectionProducts";
-import { useState } from "react";
 
 function Home(props) {
   // Main Slider section

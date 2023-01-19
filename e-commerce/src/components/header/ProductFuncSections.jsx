@@ -3,7 +3,6 @@ import Cart from "./Cart";
 import { Link } from "react-router-dom";
 
 function ProductFunc(props) {
-
   const products = props.cart.map((data) => {
     return (
       <Cart

@@ -31,7 +31,7 @@ function App(){
         setCart={setCart}
         />} />
         <Route path="/login" element={<LogIn />}/>
-        <Route path="/detailpage" element={<DetailPage />}/>
+        <Route path="/detailpage/:id" element={<DetailPage />}/>
       </Routes>
     </div>
   )

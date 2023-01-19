@@ -19,16 +19,6 @@ import Peopleprofile from "../../data/peopleprofileData";
 import PeopleProfile from "../carouselsection/PeopleProfileSections";
 import NewsSec from "../carouselsection/NewsSections";
 import newsSlider from "../../data/newssliderData";
-import {
-  footerDataPart1,
-  footerDataPart2,
-  footerTextData,
-} from "../../data/footerDataS";
-import {
-  FooterAboutFunc1,
-  FooterAboutFunc2,
-  FooterMainSect,
-} from "../footer/FooterSections";
 import LogosFunc from "../productsection/LogoSections";
 import FourthFunc from "../productsection/FourthSections";
 import SectionProFunc from "../productsection/SectionProducts";
@@ -96,10 +86,8 @@ function Home(props) {
           picUrl={product.picUrl}
           id={product.id}
           stars={product.stars}
-          // setWishList={props.setWishList}
-          // wishlist={props.wishlist}
-          cart={product.cart}
-          setCart={product.setCart}
+          cart={props.cart}
+          setCart={props.setCart}
           text={product.text}
           picUrl2={product.picUrl2}
           available={product.available}
@@ -177,42 +165,6 @@ function Home(props) {
     );
   });
 
-  // Footer
-  const footerMain = footerDataPart1.map((data) => {
-    return (
-      <FooterMainSect
-        title={data.title}
-        contact={data.contact}
-        pic={data.pic}
-        sendImg={data.sendImg}
-      />
-    );
-  });
-
-  const footerAboutRight = footerDataPart2.map((data) => {
-    return (
-      <FooterAboutFunc1
-        logoPic={data.logoPic}
-        text={data.text}
-        googleLogo={data.googleLogo}
-        fbLogo={data.fbLogo}
-        whatsappLogo={data.whatsappLogo}
-      />
-    );
-  });
-
-  const footerAboutLeft = footerTextData.map((data) => {
-    return (
-      <FooterAboutFunc2
-        title={data.title}
-        type1={data.type1}
-        type2={data.type2}
-        type3={data.type3}
-        type4={data.type4}
-        type5={data.type5}
-      />
-    );
-  });
 
   return (
     <div className="App ">
@@ -253,7 +205,6 @@ function Home(props) {
           playButtonEnabled={true}
           autoPlayDirection="rtl"
           autoPlayActionDisabled={true}
-          // responsive={responsive1}
           autoPlayInterval={2000}
         >
           {popularProducts}
@@ -307,15 +258,6 @@ function Home(props) {
         >
           {NewsSection}
         </AliceCarousel>
-      </div>
-      <div className="footer-container">
-        <div className="container">
-          <div>{footerMain}</div>
-          <div className="footerabout-container">
-            {footerAboutRight}
-            {footerAboutLeft}
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import {useState} from "react"
 import Header from './components/header/Header';
 import LogIn from './components/router/Login';
 import DetailPage from './components/detailpage/Detailpage';
-
+import Footer from './components/footer/Footer';
 
 
 
@@ -30,9 +30,14 @@ function App(){
         cart={cart}
         setCart={setCart}
         />} />
-        <Route path="/login" element={<LogIn />}/>
+        <Route path="/login" element={<LogIn 
+        cart={cart}
+        setCart={setCart}
+        />}/>
         <Route path="/detailpage/:id" element={<DetailPage />}/>
       </Routes>
+
+      <Footer/>
     </div>
   )
 }

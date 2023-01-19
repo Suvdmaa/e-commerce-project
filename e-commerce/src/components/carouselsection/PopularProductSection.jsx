@@ -5,50 +5,94 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { PopularProductsData } from "../../data/SeedData";
+// import { PopularProductsData } from "../../data/SeedData";
+import { useParams } from "react-router-dom";
 
 function GenreFunc(props) {
   return <button className="btn-click">{props.name}</button>;
 }
 
 function Popularproducts(props) {
-  const [show, setShow] = useState(false);
-  const [fullscreen, setFullscreen] = useState(true);
+  // const [show, setShow] = useState(false);
+  // const [fullscreen, setFullscreen] = useState(true);
   const [toggle, setToggle] = useState(false);
   const [heart, setHeart] = useState(false);
-  console.log("props", props);
+
+  const {id} = useParams();
+  let foundProduct = {};
+  if(id){
+    foundProduct = PopularProductsData.map((product) => {
+      product.products.map((data) => {
+        if(data.id == id){
+          return data
+        }
+      })
+      return product
+    })[0];
+  }
+
+  if(Object.keys(props.length > 0)){
+    foundProduct = props.product;
+  }
+
+
+  const product = foundProduct;
+  const liked = props.cart.filter((wish) => wish.id === product.id)[0];
+  console.log(liked)
+
+ 
+
+
+
   function handleUpVote(props) {
     console.log("upvoted");
     console.log(props.title);
   }
 
   function handleClickHeart(event) {
-    // console.log("event", event);
-    // console.log(heart);
-    // console.log("werty", props);
-
     // props.setWishList(props.wishlist + 1);
-    heart && props.filter((item) => item.id !== event);
+    // heart && props.filter((item) => item.id !== event);
     toast(`You liked ${props.title}.`);
 
     // Add Products to Cart----------------------
 
     // if (props.id == event) {
     //   console.log("product", props);
-    //   props.cart.push(props);
+    //   props.cart.push(props.title);
     // }
     // props.setCart(props.cart);
 
-    props.setCart([
-      ...props.cart,
-      {
-        id: props.id,
-        title: props.title,
-        price: props.price,
-        stars: props.stars,
-        picUrl: props.picUrl,
-      },
-    ]);
+    if(event === props.id){
+      props.setCart([...props.cart,
+        {
+          id: props.id,
+          title: props.title,
+          price: props.price,
+          stars: props.stars,
+          picUrl: props.picUrl,
+        },
+      ])
+    }
+    console.log(props.cart)
+    
   }
+
+
+  // const handleClickHeart = (event) =>{
+  //       if(event === props.id){
+  //         return props.setCart([...props.cart,
+  //       {
+  //         id: props.id,
+  //         title: props.title,
+  //         price: props.price,
+  //         stars: props.stars,
+  //         picUrl: props.picUrl,
+  //       },
+  //     ])
+  //   }
+  //   console.log(props.cart)
+  // }
+  
 
   return (
     <div className="popular-products" id="popularP">
@@ -56,26 +100,26 @@ function Popularproducts(props) {
         {/*Link-eer id-giinhaa turuluur uur uur page neeh arga mun App.js dotor route ashiglahdaa /detailpage/:id iig ashiglana */}
         <Link
           to={`/detailpage/${props.position}`}
-          state={{
-            price: props.price,
-            title: props.title,
-            position: props.position,
-            picUrl: props.picUrl,
-            id: props.id,
-            stars: props.stars,
-            text: props.text,
-            picUrl1: props.picUrl1,
-            picUrl2: props.picUrl2,
-            available: props.available,
-            sku: props.sku,
-          }}
+          // state={{
+          //   price: props.price,
+          //   title: props.title,
+          //   position: props.position,
+          //   picUrl: props.picUrl,
+          //   id: props.id,
+          //   stars: props.stars,
+          //   text: props.text,
+          //   picUrl1: props.picUrl1,
+          //   picUrl2: props.picUrl2,
+          //   available: props.available,
+          //   sku: props.sku,
+          // }}
         >
           <Card.Img
             className="card-image"
             src={props.picUrl}
-            onClick={() => {
-              setShow(!show);
-            }}
+            // onClick={() => {
+            //   setShow(!show);
+            // }}
           />
         </Link>
         <div>
@@ -86,13 +130,27 @@ function Popularproducts(props) {
               setToggle(!toggle);
               handleClickHeart(props.id);
               setHeart(!heart);
+              if(!liked) {
+                const likedProduct = {
+                  id: product.id,
+                  name: product.title,
+                  liked: true,
+                  pic: product.picUrl,
+                };
+                props.setCart([...props.cart, likedProduct])
+              } else{
+                props.setCart(
+                  props.cart.filter((w) => 
+                  w.id !== product.id)
+                )
+              }
             }}
           >
-            {toggle ? (
+            {liked ? (
               <i class="fa-solid fa-heart"></i>
             ) : (
               <i class="fa-regular fa-heart"></i>
-            )}{" "}
+            )}
           </button>
         </div>
         <Card.Body className="cart-container">

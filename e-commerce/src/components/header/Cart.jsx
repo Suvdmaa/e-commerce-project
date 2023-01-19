@@ -2,6 +2,7 @@ import { Rating } from "react-simple-star-rating";
 
 
 export default function Cart(props) {
+    console.log(props)
     
     function deleteItem (event){
         props.setCart(props.cart.filter(item => item.id !== event))

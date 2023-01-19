@@ -11,7 +11,10 @@ import SecondSliderProduct from "../../data/secondcarouselData";
 import { product, twoProduct } from "../../data/thirdsectionData";
 import { OneProduct, Twoproduct } from "../productsection/TwoProductsSections";
 import { fourthsection, logos } from "../../data/fourthsectionData";
-import { GenreFunc, Popularproducts } from "../carouselsection/PopularProductSection";
+import {
+  GenreFunc,
+  Popularproducts,
+} from "../carouselsection/PopularProductSection";
 import Peopleprofile from "../../data/peopleprofileData";
 import PeopleProfile from "../carouselsection/PeopleProfileSections";
 import NewsSec from "../carouselsection/NewsSections";
@@ -93,10 +96,14 @@ function Home(props) {
           picUrl={product.picUrl}
           id={product.id}
           stars={product.stars}
-          setWishList={props.setWishList}
-          wishlist={props.wishlist}
-          cart={props.cart}
-          setCart={props.setCart}
+          // setWishList={props.setWishList}
+          // wishlist={props.wishlist}
+          cart={product.cart}
+          setCart={product.setCart}
+          text={product.text}
+          picUrl2={product.picUrl2}
+          available={product.available}
+          sku={product.sku}
         />
       );
     });

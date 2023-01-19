@@ -2,17 +2,12 @@ import Card from "react-bootstrap/Card";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
 // import DetailPage from "../detailpage/Detailpage";
-import { Link } from "react-router-dom"
-import {toast, ToastContainer} from "react-toastify"
+import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import { PopularProductsData } from "../../data/SeedData";
 
 function GenreFunc(props) {
-  return (
-    <button
-      className="btn-click"
-    >
-      {props.name}
-    </button>
-  );
+  return <button className="btn-click">{props.name}</button>;
 }
 
 function Popularproducts(props) {
@@ -20,7 +15,7 @@ function Popularproducts(props) {
   const [fullscreen, setFullscreen] = useState(true);
   const [toggle, setToggle] = useState(false);
   const [heart, setHeart] = useState(false);
-
+  console.log("props", props);
   function handleUpVote(props) {
     console.log("upvoted");
     console.log(props.title);
@@ -33,7 +28,7 @@ function Popularproducts(props) {
 
     // props.setWishList(props.wishlist + 1);
     heart && props.filter((item) => item.id !== event);
-    toast(`You liked ${props.title}.`)
+    toast(`You liked ${props.title}.`);
 
     // Add Products to Cart----------------------
 
@@ -44,20 +39,37 @@ function Popularproducts(props) {
     // props.setCart(props.cart);
 
     props.setCart([
-      ...props.cart, {
+      ...props.cart,
+      {
         id: props.id,
         title: props.title,
         price: props.price,
         stars: props.stars,
         picUrl: props.picUrl,
-      }
-    ])
+      },
+    ]);
   }
 
   return (
     <div className="popular-products" id="popularP">
       <Card className="card-style">
-        <Link to="/detailpage">
+        {/*Link-eer id-giinhaa turuluur uur uur page neeh arga mun App.js dotor route ashiglahdaa /detailpage/:id iig ashiglana */}
+        <Link
+          to={`/detailpage/${props.position}`}
+          state={{
+            price: props.price,
+            title: props.title,
+            position: props.position,
+            picUrl: props.picUrl,
+            id: props.id,
+            stars: props.stars,
+            text: props.text,
+            picUrl1: props.picUrl1,
+            picUrl2: props.picUrl2,
+            available: props.available,
+            sku: props.sku,
+          }}
+        >
           <Card.Img
             className="card-image"
             src={props.picUrl}
@@ -84,6 +96,22 @@ function Popularproducts(props) {
           </button>
         </div>
         <Card.Body className="cart-container">
+          {/* <Link
+            to={`/detailpage/${props.position}`}
+            state={{
+              price: props.price,
+              title: props.title,
+              position: props.position,
+              picUrl: props.picUrl,
+              id: props.id,
+              stars: props.stars,
+              text: props.text,
+              picUrl1: props.picUrl1,
+              picUrl2: props.picUrl2,
+              available: props.available,
+              sku: props.sku,
+            }}
+          ></Link> */}
           <h5>{props.title}</h5>
           <div className="d-flex">
             <div>
@@ -100,7 +128,6 @@ function Popularproducts(props) {
             </div>
           </div>
         </Card.Body>
-        {/* <DetailPage show={show} fullscreen={fullscreen} setShow={setShow} /> */}
       </Card>
       <ToastContainer />
     </div>

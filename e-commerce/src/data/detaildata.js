@@ -8,7 +8,6 @@ const MainSectData = [
         picUrl2: "images/de-2.png" ,
         stars: "",
         sku: '01133-9-9',
-
     }
 ]
 
@@ -85,13 +84,6 @@ const reviewData = [
         btn: "Write a review",
     }
 ]
-
-
-
-
-
-
-
 
 export {
     MainSectData, 

@@ -74,7 +74,7 @@ function ProductFunc(props) {
               <p className="p-3">
                 <i class="bi bi-cart3 px-2"></i>
                 <span className="color-circle p-1 px-2 rounded-circle">
-                  {/* {props.cart.length} */}0
+                  {props.cart.length}
                 </span>
               </p>
             </Link>

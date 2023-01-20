@@ -759,3 +759,29 @@
   color: #667085;
 }
 
+/* Cart Detail Page---------------------------------------*/
+.container-right{
+  margin: 50px;
+}
+
+.title-container-right{
+  background: #E2F4FF;
+  padding: 5px 30px;
+  color: #232323;
+  font-size: 20.68px;
+}
+
+.container-left{
+  border: 1px solid var(--bs-border-color-translucent);
+  margin: 50px;
+}
+
+
+.title-container-left{
+  background: #E2F4FF;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+
+

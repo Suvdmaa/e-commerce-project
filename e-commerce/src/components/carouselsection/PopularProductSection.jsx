@@ -21,7 +21,7 @@ function Popularproducts(props) {
   if (id) {
     foundProduct = PopularProductsData.map((product) => {
       product.products.map((data) => {
-        if (data.id == id) {
+        if (data.position == id) {
           return data;
         }
       });
@@ -44,7 +44,6 @@ function Popularproducts(props) {
 
   function handleClickHeart(event) {
     toast(`You liked ${props.title}.`);
-    heart && props.filter((item) => item.id !== event);
 
     // Add Products to Cart----------------------
 
@@ -103,12 +102,12 @@ function Popularproducts(props) {
                 const likedProduct = {
                   id: product.id,
                   name: product.title,
-                  liked: false,
+                  liked: true,
                   pic: product.picUrl,
                 };
                 props.setCart([...props.cart, likedProduct]);
               } else {
-                props.setCart(props.cart.filter((w) => w.id !== product.id));
+                props.setCart(props.cart.filter((w) => w.id !== props.id));
               }
             }}
           >

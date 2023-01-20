@@ -6,6 +6,7 @@ import {useState} from "react"
 import Header from './components/header/Header';
 import LogIn from './components/router/Login';
 import DetailPage from './components/detailpage/Detailpage';
+import CartPage from './components/CartPage.jsx/CartPage';
 import Footer from './components/footer/Footer';
 
 
@@ -25,7 +26,7 @@ function App(){
         <Route path="/sign" element={<SignIn cart={cart} setCart={setCart}/>} />
         <Route path="/login" element={<LogIn cart={cart} setCart={setCart}/>}/>
         <Route path="/detailpage/:id" element={<DetailPage />}/>
-        {/* <Route path="/cartpage" element={<CartPage  cart={cart} setCart={setCart}/>} /> */}
+        <Route path="/cartpage" element={<CartPage  cart={cart} setCart={setCart}/>} />
       </Routes>
 
       <Footer/>

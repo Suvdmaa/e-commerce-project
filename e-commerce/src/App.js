@@ -21,20 +21,11 @@ function App(){
       />
       
       <Routes>
-        <Route exact path='/' 
-        element={<Home 
-        cart={cart}
-        setCart={setCart}
-        />} />
-        <Route path="/sign" element={<SignIn 
-        cart={cart}
-        setCart={setCart}
-        />} />
-        <Route path="/login" element={<LogIn 
-        cart={cart}
-        setCart={setCart}
-        />}/>
+        <Route exact path='/' element={<Home cart={cart} setCart={setCart}/>} />
+        <Route path="/sign" element={<SignIn cart={cart} setCart={setCart}/>} />
+        <Route path="/login" element={<LogIn cart={cart} setCart={setCart}/>}/>
         <Route path="/detailpage/:id" element={<DetailPage />}/>
+        {/* <Route path="/cartpage" element={<CartPage  cart={cart} setCart={setCart}/>} /> */}
       </Routes>
 
       <Footer/>

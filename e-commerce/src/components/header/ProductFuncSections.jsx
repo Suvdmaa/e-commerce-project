@@ -70,10 +70,14 @@ function ProductFunc(props) {
               </Dropdown>
             </p>
 
-            <p className="p-3">
-              <i class="bi bi-cart3 px-2"></i>
-              <span className="color-circle p-1 px-2 rounded-circle">0</span>
-            </p>
+            <Link to={"/cartpage"}>
+              <p className="p-3">
+                <i class="bi bi-cart3 px-2"></i>
+                <span className="color-circle p-1 px-2 rounded-circle">
+                  {/* {props.cart.length} */}0
+                </span>
+              </p>
+            </Link>
           </div>
         </div>
       </header>

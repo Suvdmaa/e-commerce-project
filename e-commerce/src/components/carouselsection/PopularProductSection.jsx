@@ -13,8 +13,6 @@ function GenreFunc(props) {
 }
 
 function Popularproducts(props) {
-  // const [show, setShow] = useState(false);
-  // const [fullscreen, setFullscreen] = useState(true);
   const [toggle, setToggle] = useState(false);
   const [heart, setHeart] = useState(false);
 
@@ -45,9 +43,8 @@ function Popularproducts(props) {
   }
 
   function handleClickHeart(event) {
-    // props.setWishList(props.wishlist + 1);
-    // heart && props.filter((item) => item.id !== event);
     toast(`You liked ${props.title}.`);
+    heart && props.filter((item) => item.id !== event);
 
     // Add Products to Cart----------------------
 
@@ -72,22 +69,6 @@ function Popularproducts(props) {
     console.log(props.cart);
   }
 
-  // const handleClickHeart = (event) => {
-  //   if (event === props.id) {
-  //     return props.setCart([
-  //       ...props.cart,
-  //       {
-  //         id: props.id,
-  //         title: props.title,
-  //         price: props.price,
-  //         stars: props.stars,
-  //         picUrl: props.picUrl,
-  //       },
-  //     ]);
-  //   }
-  //   console.log(props.cart);
-  // };
-
   return (
     <div className="popular-products" id="popularP">
       <Card className="card-style">
@@ -108,13 +89,7 @@ function Popularproducts(props) {
             sku: props.sku,
           }}
         >
-          <Card.Img
-            className="card-image"
-            src={props.picUrl}
-            // onClick={() => {
-            //   setShow(!show);
-            // }}
-          />
+          <Card.Img className="card-image" src={props.picUrl} />
         </Link>
         <div>
           <button
@@ -128,7 +103,7 @@ function Popularproducts(props) {
                 const likedProduct = {
                   id: product.id,
                   name: product.title,
-                  liked: true,
+                  liked: false,
                   pic: product.picUrl,
                 };
                 props.setCart([...props.cart, likedProduct]);
@@ -145,22 +120,6 @@ function Popularproducts(props) {
           </button>
         </div>
         <Card.Body className="cart-container">
-          {/* <Link
-            to={`/detailpage/${props.position}`}
-            state={{
-              price: props.price,
-              title: props.title,
-              position: props.position,
-              picUrl: props.picUrl,
-              id: props.id,
-              stars: props.stars,
-              text: props.text,
-              picUrl1: props.picUrl1,
-              picUrl2: props.picUrl2,
-              available: props.available,
-              sku: props.sku,
-            }}
-          ></Link> */}
           <h5>{props.title}</h5>
           <div className="d-flex">
             <div>

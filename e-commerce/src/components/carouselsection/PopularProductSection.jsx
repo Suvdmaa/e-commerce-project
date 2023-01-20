@@ -18,31 +18,26 @@ function Popularproducts(props) {
   const [toggle, setToggle] = useState(false);
   const [heart, setHeart] = useState(false);
 
-  const {id} = useParams();
+  const { id } = useParams();
   let foundProduct = {};
-  if(id){
+  if (id) {
     foundProduct = PopularProductsData.map((product) => {
       product.products.map((data) => {
-        if(data.id == id){
-          return data
+        if (data.id == id) {
+          return data;
         }
-      })
-      return product
+      });
+      return product;
     })[0];
   }
 
-  if(Object.keys(props.length > 0)){
+  if (Object.keys(props.length > 0)) {
     foundProduct = props.product;
   }
 
-
   const product = foundProduct;
-  const liked = props.cart.filter((wish) => wish.id === product.id)[0];
-  console.log(liked)
-
- 
-
-
+  const liked = props.cart.filter((wish) => wish.id === props.id)[0];
+  console.log(liked);
 
   function handleUpVote(props) {
     console.log("upvoted");
@@ -62,8 +57,9 @@ function Popularproducts(props) {
     // }
     // props.setCart(props.cart);
 
-    if(event === props.id){
-      props.setCart([...props.cart,
+    if (event === props.id) {
+      props.setCart([
+        ...props.cart,
         {
           id: props.id,
           title: props.title,
@@ -71,16 +67,15 @@ function Popularproducts(props) {
           stars: props.stars,
           picUrl: props.picUrl,
         },
-      ])
+      ]);
     }
-    console.log(props.cart)
-    
+    console.log(props.cart);
   }
 
-
-  // const handleClickHeart = (event) =>{
-  //       if(event === props.id){
-  //         return props.setCart([...props.cart,
+  // const handleClickHeart = (event) => {
+  //   if (event === props.id) {
+  //     return props.setCart([
+  //       ...props.cart,
   //       {
   //         id: props.id,
   //         title: props.title,
@@ -88,11 +83,10 @@ function Popularproducts(props) {
   //         stars: props.stars,
   //         picUrl: props.picUrl,
   //       },
-  //     ])
+  //     ]);
   //   }
-  //   console.log(props.cart)
-  // }
-  
+  //   console.log(props.cart);
+  // };
 
   return (
     <div className="popular-products" id="popularP">
@@ -100,19 +94,19 @@ function Popularproducts(props) {
         {/*Link-eer id-giinhaa turuluur uur uur page neeh arga mun App.js dotor route ashiglahdaa /detailpage/:id iig ashiglana */}
         <Link
           to={`/detailpage/${props.position}`}
-          // state={{
-          //   price: props.price,
-          //   title: props.title,
-          //   position: props.position,
-          //   picUrl: props.picUrl,
-          //   id: props.id,
-          //   stars: props.stars,
-          //   text: props.text,
-          //   picUrl1: props.picUrl1,
-          //   picUrl2: props.picUrl2,
-          //   available: props.available,
-          //   sku: props.sku,
-          // }}
+          state={{
+            price: props.price,
+            title: props.title,
+            position: props.position,
+            picUrl: props.picUrl,
+            id: props.id,
+            stars: props.stars,
+            text: props.text,
+            picUrl1: props.picUrl1,
+            picUrl2: props.picUrl2,
+            available: props.available,
+            sku: props.sku,
+          }}
         >
           <Card.Img
             className="card-image"
@@ -130,19 +124,16 @@ function Popularproducts(props) {
               setToggle(!toggle);
               handleClickHeart(props.id);
               setHeart(!heart);
-              if(!liked) {
+              if (!liked) {
                 const likedProduct = {
                   id: product.id,
                   name: product.title,
                   liked: true,
                   pic: product.picUrl,
                 };
-                props.setCart([...props.cart, likedProduct])
-              } else{
-                props.setCart(
-                  props.cart.filter((w) => 
-                  w.id !== product.id)
-                )
+                props.setCart([...props.cart, likedProduct]);
+              } else {
+                props.setCart(props.cart.filter((w) => w.id !== product.id));
               }
             }}
           >

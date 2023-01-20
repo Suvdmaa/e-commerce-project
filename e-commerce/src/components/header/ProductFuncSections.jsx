@@ -3,7 +3,7 @@ import Cart from "./Cart";
 import { Link } from "react-router-dom";
 
 function ProductFunc(props) {
-  console.log("productfuncsection",props.cart)
+  console.log("productfuncsection", props.cart);
   const products = props.cart.map((data) => {
     return (
       <Cart
@@ -37,7 +37,9 @@ function ProductFunc(props) {
         </div>
         <div className="second-header">
           <div className="secondheader-container container p-4 text-white d-flex justify-content-between">
-            <img className="px-5 logo" src={props.logoUrl} />
+            <Link to={"/"}>
+              <img className="px-5 logo" src={props.logoUrl} />
+            </Link>
             <div className="flex-grow-1 ps-3 col-md">
               <input
                 type="search"

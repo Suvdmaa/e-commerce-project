@@ -17,7 +17,7 @@ export default function CartPage(props) {
   });
   return (
     <div className="d-flex container">
-      <div className="col-8 container-right">
+      <div className="col-9 container-right">
         <div className="d-flex title-container-right">
           <h4 className="flex-grow-1">Product</h4>
           <h4 className="mx-5">Price</h4>
@@ -26,28 +26,32 @@ export default function CartPage(props) {
         </div>
         <div>{items}</div>
       </div>
-      <div className="col-4 container-left">
+      <div className="col-3 container-left">
         <h4 className="title-container-left">Cart total</h4>
-        <div>
-          <p>Subtotal</p>
-          <p>$23,20</p>
+        <div className="total-inside-container">
+          <div className="d-flex justify-content-between">
+            <p className="total-text">Subtotal</p>
+            <p className="total-price">$23,20</p>
+          </div>
+          <hr />
+          <div className="coupon-code my-4">
+            <input type="number" placeholder="Enter coupon code"></input>
+            <button>Apply</button>
+          </div>
+          <hr />
+          <select className="my-3">
+            <option>Country</option>
+            <option>Mongolia</option>
+            <option>America</option>
+            <option>Russia</option>
+            <option>Chine</option>
+          </select>
+          <div className="d-flex justify-content-between my-3">
+            <p>Total Amount</p>
+            <p>$23,20</p>
+          </div>
+          <button className="checkout-btn">Proceed to checkout</button>
         </div>
-        <hr />
-        <input type="number" placeholder="Enter coupon code"></input>
-        <button>Apply</button>
-        <hr />
-        <select>
-          <option>Country</option>
-          <option>Mongolia</option>
-          <option>America</option>
-          <option>Russia</option>
-          <option>Chine</option>
-        </select>
-        <div>
-          <p>Total Amount</p>
-          <p>$23,20</p>
-        </div>
-        <button>Proceed to checkout</button>
       </div>
     </div>
   );

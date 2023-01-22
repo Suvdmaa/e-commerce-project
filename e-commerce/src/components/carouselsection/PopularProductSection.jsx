@@ -62,6 +62,7 @@ function Popularproducts(props) {
           price: props.price,
           stars: props.stars,
           picUrl: props.picUrl,
+          color: props.color,
         },
       ]);
     }
@@ -86,6 +87,7 @@ function Popularproducts(props) {
             picUrl2: props.picUrl2,
             available: props.available,
             sku: props.sku,
+            color: props.color,
           }}
         >
           <Card.Img className="card-image" src={props.picUrl} />

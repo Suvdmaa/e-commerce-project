@@ -795,6 +795,38 @@
   font-weight: 600;
 }
 
+.btn-cart {
+  width: 280px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 22.697px;
+  line-height: 34px;
+  border-radius: 32.4242px;
+}
+
+.btn-shopping {
+  color: white;
+  background: #eda415;
+  border: none;
+}
+
+.btn-update {
+  color: #797979;
+  background-color: white;
+  border: 1px solid #797979;
+}
+
+.btn-clear {
+  color: #c33131;
+  background-color: white;
+  border: 1px solid #c33131;
+}
+
+.remove-btn {
+  border: none;
+  background-color: white;
+}
+
 /* Container-left -----------------------*/
 .container-left {
   border: 1px solid var(--bs-border-color-translucent);

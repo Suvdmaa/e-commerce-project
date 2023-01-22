@@ -15,6 +15,7 @@ function ProductFunc(props) {
         stars={data.stars}
         cart={props.cart}
         setCart={props.setCart}
+        color={data.color}
       />
     );
   });

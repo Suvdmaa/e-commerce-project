@@ -92,6 +92,7 @@ function Home(props) {
           picUrl2={product.picUrl2}
           available={product.available}
           sku={product.sku}
+          color={product.color}
         />
       );
     });
@@ -164,7 +165,6 @@ function Home(props) {
       />
     );
   });
-
 
   return (
     <div className="App ">

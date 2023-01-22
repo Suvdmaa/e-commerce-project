@@ -40,6 +40,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Wireless headphones",
@@ -54,6 +55,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Wireless headphones",
@@ -68,6 +70,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Play game",
@@ -82,6 +85,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Play game",
@@ -96,6 +100,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Tablet as a laptop",
@@ -110,6 +115,8 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
+                color: "blue",
             },
             {
                 title: "Play game",
@@ -124,6 +131,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Tablet as a laptop",
@@ -138,6 +146,8 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
+                color: "blue",
             },
         ]
     },
@@ -158,6 +168,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Wireless headphones",
@@ -172,6 +183,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Wireless headphones",
@@ -186,6 +198,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "red",
             },
             {
                 title: "Play game",
@@ -200,6 +213,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Play game",
@@ -214,6 +228,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Tablet as a laptop",
@@ -228,6 +243,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "blue",
             },
             {
                 title: "Play game",
@@ -242,6 +258,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Tablet as a laptop",
@@ -256,6 +273,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "blue",
             },
         ]
     },
@@ -276,6 +294,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Wireless headphones",
@@ -290,6 +309,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Wireless headphones",
@@ -304,6 +324,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "red",
             },
             {
                 title: "Play game",
@@ -318,6 +339,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "black",
             },
             {
                 title: "Play game",
@@ -332,6 +354,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "yellow",
             },
             {
                 title: "Tablet as a laptop",
@@ -346,6 +369,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "blue",
             },
             {
                 title: "Play game",
@@ -360,6 +384,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "blue",
             },
             {
                 title: "Tablet as a laptop",
@@ -374,6 +399,7 @@ const PopularProductsData = [
                 picUrl1: "images/de-1.png" ,
                 picUrl2: "images/de-2.png" ,
                 sku: '01133-9-9',
+                color: "blue",
             },
         ]
     },

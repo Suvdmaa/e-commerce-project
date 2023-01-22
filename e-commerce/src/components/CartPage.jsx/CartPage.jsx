@@ -1,4 +1,5 @@
 import CartDetail from "./CartDetail";
+import { Link } from "react-router-dom";
 
 export default function CartPage(props) {
   const items = props.cart.map((data) => {
@@ -12,6 +13,7 @@ export default function CartPage(props) {
         stars={data.stars}
         cart={props.cart}
         setCart={props.setCart}
+        color={data.color}
       />
     );
   });
@@ -25,6 +27,13 @@ export default function CartPage(props) {
           <h4 className="mx-5">Subtotal</h4>
         </div>
         <div>{items}</div>
+        <div className="d-flex justify-content-between">
+          <Link to={"/"}>
+            <button className="btn-shopping btn-cart">Continue shopping</button>
+          </Link>
+          <button className="btn-update btn-cart">Update cart</button>
+          <button className="btn-clear btn-cart">Clear cart</button>
+        </div>
       </div>
       <div className="col-3 container-left">
         <h4 className="title-container-left">Cart total</h4>

@@ -19,7 +19,7 @@ export default function DetailMainSection(props) {
       <div className="col-6 p-3">
         <img src={props.picUrl}></img>
         <div className="d-flex my-4">
-          <img className="me-4" src={props.picUrl2}></img>
+          <img className="me-4" src={props.picUrl}></img>
           <img src={props.picUrl2}></img>
         </div>
       </div>

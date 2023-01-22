@@ -11,7 +11,7 @@ export default function CartDetail(props) {
         </div>
         <div className="cartdetail-col py-2 mx-4">
           <h5>{props.title}</h5>
-          <p>Color: </p>
+          <p>Color: {props.color}</p>
           <p>Size: 30</p>
         </div>
         <div className="cartdetail-col px-3">
@@ -26,11 +26,12 @@ export default function CartDetail(props) {
           <p className="price-num">{props.price}</p>
         </div>
         <div className="px-3">
-          <button onClick={() => deleteItem(props.id)}>
-            <i class="fa-solid fa-square-xmark"></i>
+          <button onClick={() => deleteItem(props.id)} className="remove-btn">
+            <i class="bi bi-x-circle"></i>
           </button>
         </div>
       </div>
+      <hr></hr>
     </div>
   );
 }

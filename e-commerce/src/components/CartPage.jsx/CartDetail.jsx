@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 export default function CartDetail(props) {
   function deleteItem(event) {
     props.setCart(props.cart.filter((item) => item.id !== event));
   }
-
+  const [num, setNum] = useState(1);
   return (
     <div>
       <div className="d-flex cartdetail-container align-items-center justify-content-between">
@@ -18,9 +20,9 @@ export default function CartDetail(props) {
           <p className="price-num">{props.price}</p>
         </div>
         <div className="d-flex cartdetail-col btn-sum px-3">
-          <button>-</button>
-          <p className="num">1</p>
-          <button>+</button>
+          <button onClick={() => setNum(num - 1)}>-</button>
+          <p className="num">{num}</p>
+          <button onClick={() => setNum(num + 1)}>+</button>
         </div>
         <div className="cartdetail-col col-price px-5">
           <p className="price-num">{props.price}</p>

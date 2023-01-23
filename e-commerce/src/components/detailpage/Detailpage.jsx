@@ -59,17 +59,17 @@ function DetailPage(props) {
   });
 
   const logoFunc = logoData.map((data) => {
-    return <img className="d-logo" src={data.logo}></img>;
+    return <img className="d-logo" src={`/${data.logo}`}></img>;
   });
 
   return (
     <div>
       <div className="d-flex container">
         <div className="col-6 p-3">
-          <img src={detail.picUrl}></img>
+          <img src={`/${detail.picUrl}`}></img>
           <div className="d-flex my-4">
-            <img className="me-4" src={detail.picUrl}></img>
-            <img src={detail.picUrl}></img>
+            <img className="me-4" src={`/${detail.picUrl}`}></img>
+            <img src={`/${detail.picUrl}`}></img>
           </div>
         </div>
         <div className="col-6 pt-3 px-3 m-5">

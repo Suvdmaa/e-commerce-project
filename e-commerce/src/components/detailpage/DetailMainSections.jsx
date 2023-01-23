@@ -14,6 +14,8 @@ export default function DetailMainSection(props) {
     return <img className="d-logo" src={data.logo}></img>;
   });
 
+  const [num, setNum] = useState(1);
+
   return (
     <div className="d-flex container">
       <div className="col-6 p-3">
@@ -48,7 +50,14 @@ export default function DetailMainSection(props) {
             {sizes}
           </p>
           <p className="my-4">
-            <span className="fw-bold">Quantity:</span>
+            <span className="fw-bold">
+              Quantity:
+              <div className="d-flex cartdetail-col btn-sum px-3">
+                <button onClick={() => setNum(num - 1)}>-</button>
+                <p className="num">{num}</p>
+                <button onClick={() => setNum(num + 1)}>+</button>
+              </div>
+            </span>
           </p>
           <div>
             <button className="d-btn">Add to cart</button>

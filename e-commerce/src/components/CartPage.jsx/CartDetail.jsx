@@ -1,10 +1,23 @@
 import { useState } from "react";
 
 export default function CartDetail(props) {
+  const [num, setNum] = useState(1);
+  const [sum, setSum] = useState(props.price);
+
   function deleteItem(event) {
     props.setCart(props.cart.filter((item) => item.id !== event));
   }
-  const [num, setNum] = useState(1);
+
+  function handleMinus() {
+    setNum(num - 1);
+    setSum(sum - props.price);
+  }
+
+  function handlePlus() {
+    setNum(num + 1);
+    setSum(sum + props.price);
+  }
+
   return (
     <div>
       <div className="d-flex cartdetail-container align-items-center justify-content-between">
@@ -20,12 +33,12 @@ export default function CartDetail(props) {
           <p className="price-num">{props.price}</p>
         </div>
         <div className="d-flex cartdetail-col btn-sum px-3">
-          <button onClick={() => setNum(num - 1)}>-</button>
+          <button onClick={() => handleMinus()}>-</button>
           <p className="num">{num}</p>
-          <button onClick={() => setNum(num + 1)}>+</button>
+          <button onClick={() => handlePlus()}>+</button>
         </div>
         <div className="cartdetail-col col-price px-5">
-          <p className="price-num">{props.price}</p>
+          <p className="price-num">{sum}</p>
         </div>
         <div className="px-3">
           <button onClick={() => deleteItem(props.id)} className="remove-btn">

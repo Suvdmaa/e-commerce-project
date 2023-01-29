@@ -37,9 +37,23 @@ function Popularproducts(props) {
   const liked = props.cart.filter((wish) => wish.id === props.id)[0];
   console.log(liked);
 
-  function handleUpVote(props) {
+  function handleUpVote(event) {
     console.log("upvoted");
-    console.log(props.title);
+
+    if (event === props.id) {
+      props.setCart([
+        ...props.cart,
+        {
+          id: props.id,
+          title: props.title,
+          price: props.price,
+          stars: props.stars,
+          picUrl: props.picUrl,
+          color: props.color,
+        },
+      ]);
+    }
+    console.log(props.cart);
   }
 
   function handleClickHeart(event) {
@@ -124,15 +138,31 @@ function Popularproducts(props) {
           <h5>{props.title}</h5>
           <div className="d-flex">
             <div>
-              <p>{props.price}</p>
+              <p>${props.price}</p>
               <Rating initialValue={props.stars} />
               <a
                 onClick={() => {
-                  handleUpVote(props);
+                  handleUpVote(props.id);
+                  setHeart(!heart);
+                  if (!liked) {
+                    const likedProduct = {
+                      id: product.id,
+                      name: product.title,
+                      liked: true,
+                      pic: product.picUrl,
+                    };
+                    props.setCart([...props.cart, likedProduct]);
+                  } else {
+                    props.setCart(props.cart.filter((w) => w.id !== props.id));
+                  }
                 }}
                 className="cart"
               >
-                <i class="bi bi-cart3"></i>
+                {liked ? (
+                  <i class="fa-solid fa-cart-shopping"></i>
+                ) : (
+                  <i class="bi bi-cart3"></i>
+                )}
               </a>
             </div>
           </div>

@@ -1,18 +1,15 @@
 import DetailProductFunc from "./DetailProductFuncSections";
 import DetailReviewSection from "./DetailReviewSection";
-import {
-  MainSectData,
-  oneProductData,
-  productData,
-  reviewData,
-} from "../../data/detaildata";
-// import Header from "../../components/header/Header";
+import { oneProductData, productData, reviewData } from "../../data/detaildata";
 import { useParams, useLocation } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import { categoryData, logoData, sizeData } from "../../data/detaildata";
+import { useState } from "react";
 
 function DetailPage(props) {
   const { id } = useParams();
+
+  const [num, setNum] = useState(1);
 
   // using useLocation to get data from PopularProductSection
   const location = useLocation();
@@ -34,7 +31,7 @@ function DetailPage(props) {
   const oneProductSect = oneProductData.map((data) => {
     return (
       <div className="d-card">
-        <img className="d-onecard-image" src={data.pic} />
+        <img className="d-onecard-image" src={`/${data.pic}`} />
         <div className="d-body d-flex">
           <button className="d-flex d-button-container">
             <div className="my-auto">Add to cart</div>
@@ -66,10 +63,10 @@ function DetailPage(props) {
     <div>
       <div className="d-flex container">
         <div className="col-6 p-3">
-          <img src={`/${detail.picUrl}`}></img>
+          <img className="d-img-one" src={`/${detail.picUrl}`}></img>
           <div className="d-flex my-4">
-            <img className="me-4" src={`/${detail.picUrl}`}></img>
-            <img src={`/${detail.picUrl}`}></img>
+            <img className="d-img-two" src={`/${detail.picUrl}`}></img>
+            <img className="d-img-two" src={`/${detail.picUrl}`}></img>
           </div>
         </div>
         <div className="col-6 pt-3 px-3 m-5">
@@ -96,8 +93,13 @@ function DetailPage(props) {
               <span className="fw-bold">Size:</span>
               {sizes}
             </p>
-            <p className="my-4">
+            <p className="my-4 d-flex">
               <span className="fw-bold">Quantity:</span>
+              <div className="d-flex">
+                <button onClick={() => setNum(num - 1)}>-</button>
+                <p className="num">{num}</p>
+                <button onClick={() => setNum(num + 1)}>+</button>
+              </div>
             </p>
             <div>
               <button className="d-btn">Add to cart</button>
